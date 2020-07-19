@@ -1,5 +1,5 @@
 import Notification from './Notification.svelte'
-import{ notifications } from './Notifications.svelte'
+import{ notifications } from './Notification.svelte'
 
 export { 
     Notification,
