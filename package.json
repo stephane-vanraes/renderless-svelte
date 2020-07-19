@@ -1,6 +1,6 @@
 {
   "name": "renderless-svelte",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A collection of renderless Svelte components",
   "svelte": "index.js",
   "keywords": [
@@ -9,5 +9,9 @@
     "renderless"
   ],
   "author": "Stephane Vanraes",
-  "license": "ISC"
+  "license": "ISC",
+  "files": [
+    "src",
+    "index.js"
+  ]
 }
