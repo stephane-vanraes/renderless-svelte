@@ -16,7 +16,7 @@
 </script>
 
 <script>	
-	export let duration = 0
+	export let duration = 1000
 	
 	let timeout
 	notifications.subscribe(({ length }) => {
@@ -30,5 +30,5 @@
 </script>
 
 {#if $notifications[0]}
-	<slot content="{$notifications[0]}"></slot>
+	<slot payload="{$notifications[0]}"></slot>
 {/if}
