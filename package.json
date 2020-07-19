@@ -1,0 +1,13 @@
+{
+  "name": "renderless-svelte",
+  "version": "0.0.1",
+  "description": "A collection of renderless Svelte components",
+  "main": "index.js",
+  "keywords": [
+    "svelte",
+    "components",
+    "renderless"
+  ],
+  "author": "Stephane Vanraes",
+  "license": "ISC"
+}
