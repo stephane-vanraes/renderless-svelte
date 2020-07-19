@@ -2,7 +2,7 @@
   "name": "renderless-svelte",
   "version": "0.0.1",
   "description": "A collection of renderless Svelte components",
-  "main": "index.js",
+  "svelte": "index.js",
   "keywords": [
     "svelte",
     "components",
