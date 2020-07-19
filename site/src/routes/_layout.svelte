@@ -1,13 +1,16 @@
 <script>
-    import Nav from './components/notifications.svx'
+    import Header from '../components/Header.svelte'
+    import Nav from '../components/Nav.svelte'
 </script>
 
-<header>
-    <h1>Renderless Svelte</h1>
-    <a href="https://github.com/stephane-vanraes/renderless-svelte" target="_blank">Github</a>
-</header>
+<style>
+    main {
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 25ch;
+        margin-top: 50px;
+        width: calc(100% - 25ch);
+    }
+</style>
 
-<Nav />
-<main>
-    <slot></slot>
-</main>
+<Header /><Nav /><main><slot></slot></main>

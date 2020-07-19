@@ -1,7 +1,27 @@
----
-slug: svelte-svg
----
-
 # Getting Started
 
-Easy peasy
+Add `renderless-svelte` as a dependency to your project
+
+```
+npm add renderless-svelte
+```
+
+Simply import the components and helpers you want to use as regular components.
+
+```svelte
+<script>
+    import { Notification } from 'renderless-svelte
+</script>
+
+<Notification>...</Notification>
+```
+
+Or if you want to use it as a namespace
+
+```svelte
+<script>
+    import * as Renderless from 'renderless-svelte
+</script>
+
+<Renderless.Notification>...</Renderless.Notification>
+```

@@ -16,11 +16,17 @@
 </script>
 
 <script>	
+	import { createEventDispatcher } from 'svelte'
+
 	export let duration = 1000
-	
+
+	const dispatch = createEventDispatcher()
 	let timeout
+
 	notifications.subscribe(({ length }) => {
 		if (timeout || !length) return
+		
+		dispatch('notify', $notifications[0])
 		
 		timeout = setTimeout(() => {
 			timeout = false

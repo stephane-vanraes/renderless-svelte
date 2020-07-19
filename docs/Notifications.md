@@ -23,6 +23,7 @@ This component reacts to elements being added a queue and can be initialized wit
 
 - _payload_ will be the current item from the queue, this can be any kind of object, allowing for great flexibility in how the notifications will look like.
 - _duration_ determines how long a notification should remain visible, default is 1000 (corresponding to one second)
+- _on:notify_ fires if a new notification is being sent, `event.detail` will hold the same payload as _payload_
 
 ```html
 <script>
@@ -39,7 +40,7 @@ This component reacts to elements being added a queue and can be initialized wit
 Considering the notification is renderless it does not come with any animations out of the box, but using `svelte/transition` this becomes trivial to add.
 
 ```html
-<Notification let:payload>
+<Notification let:payload on:notify="{ev => console.log(ev.detail)}">
     <span in:fly={{ duration: 500, y: 300}}>{payload}</span>
 </Notification>
 ```
