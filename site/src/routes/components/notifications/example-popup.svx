@@ -1,0 +1,109 @@
+# Popup Notification
+
+This is a very basic implementation of a pop-up notification.
+
+Clicking any of the animals will trigger a popup, naming the animal clicked and as many little icons of said animal as has been clicked.
+
+<script>
+	import { fly } from 'svelte/transition' 
+	import ActionButton from './_ActionButton.svelte'	
+	import Notification from '../../../../../src/Notifications.svelte'
+</script>
+
+<style>
+	span {
+		background: var(--primary);
+		border-top-left-radius: .5rem;
+		bottom: 0rem;
+		color: white;
+		padding: 1rem;
+		position: fixed;
+		right: 0rem;
+	}
+</style>
+
+<ActionButton animal="Squirrel" icon="🐿️"></ActionButton>
+<ActionButton animal="Rabbit" icon="🐇"></ActionButton>
+<ActionButton animal="Hamster" icon="🐹"></ActionButton>
+
+<Notification let:payload duration="1000">
+	<span in:fly={{ duration: 500, y: 300}}>
+        {payload.animal}
+        {#each Array(payload.i) as i}
+            {payload.icon}
+        {/each}
+    </span>
+</Notification>
+
+**App.svelte**
+
+```svelte
+<script>
+	import { fly } from 'svelte/transition' 
+	import ActionButton from './ActionButton.svelte'	
+	import Notification from 'renderless-svelte'
+</script>
+
+<style>
+	span {
+		background: var(--primary);
+		border-top-left-radius: .5rem;
+		bottom: 0rem;
+		color: black;
+		padding: 1rem;
+		position: fixed;
+		right: 0rem;
+	}
+</style>
+
+<ActionButton animal="Squirrel" icon="🐿️"></ActionButton>
+<ActionButton animal="Rabbit" icon="🐇"></ActionButton>
+<ActionButton animal="Hamster" icon="🐹"></ActionButton>
+
+<Notification let:payload duration="1000">
+	<span in:fly={{ duration: 500, y: 300}}>
+        {payload.animal}
+        {#each Array(payload.i) as i}
+            {payload.icon}
+        {/each}
+    </span>
+</Notification>
+```
+
+**ActionButton.svelte**
+
+```svelte
+<script>
+	import { notifications } from 'renderless-svelte'
+    export let animal
+    export let icon
+
+    const handleClick = () => {
+        i++;
+
+        notifications.push({
+            animal,
+            icon,
+            i
+        })
+    }
+	let i = 0
+</script>
+
+<style>
+    button {
+        border-radius: .5rem;
+        padding: .25rem 1rem;
+    }
+    button:active,
+    button:focus,
+    button:hover {
+        outline: none;
+    }
+</style>
+
+<button on:click="{handleClick}">
+	{animal} {icon}
+</button>
+
+```

@@ -1,0 +1,116 @@
+# Notification Log
+
+This example shows how you can use the Notification component to create a running log.
+<script>
+	import ActionButton from './_ActionButton.svelte'	
+	import Notification from '../../../../../src/Notifications.svelte'
+
+    let log = []
+
+    const addToLog = (item) => {
+        log = [...log, item]
+        log = log.length > 5 ? log.slice(-5) : log
+    }
+</script>
+
+<style>
+    ul {
+        background-color: black;
+        border: 4px ridge;
+        color: #00FF41;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        list-style-type: none !important;
+        height: 8rem;
+    }
+</style>
+
+<ActionButton animal="Squirrel" icon="🐿️"></ActionButton>
+<ActionButton animal="Rabbit" icon="🐇"></ActionButton>
+<ActionButton animal="Hamster" icon="🐹"></ActionButton>
+
+<Notification duration="1000" on:notify="{ev => addToLog(ev.detail)}"/>
+<ul>
+    {#each log as logitem}
+        <li>{logitem.animal} {logitem.icon} x {logitem.i}</li>
+    {/each}
+</ul>
+
+**App.svelte**
+
+```svelte
+<script>
+	import ActionButton from './_ActionButton.svelte'	
+	import Notification from 'renderless-svelte'
+
+    let log = []
+
+    const addToLog = (item) => {
+        log = [...log, item]
+        log = log.length > 5 ? log.slice(-5) : log
+    }
+</script>
+
+<style>
+    ul {
+        background-color: black;
+        border: 4px ridge;
+        color: #00FF41;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        list-style-type: none;
+        height: 8rem;
+    }
+</style>
+
+<ActionButton animal="Squirrel" icon="🐿️"></ActionButton>
+<ActionButton animal="Rabbit" icon="🐇"></ActionButton>
+<ActionButton animal="Hamster" icon="🐹"></ActionButton>
+
+<Notification duration="1000" on:notify="{ev => addToLog(ev.detail)}"/>
+<ul>
+    {#each log as logitem}
+        <li>{logitem.animal} {logitem.icon} x {logitem.i}</li>
+    {/each}
+</ul>
+```
+
+**ActionButton.svelte**
+
+```svelte
+<script>
+	import { notifications } from 'renderless-svelte'
+    export let animal
+    export let icon
+
+    const handleClick = () => {
+        i++;
+
+        notifications.push({
+            animal,
+            icon,
+            i
+        })
+    }
+	let i = 0
+</script>
+
+<style>
+    button {
+        border-radius: .5rem;
+        padding: .25rem 1rem;
+    }
+    button:active,
+    button:focus,
+    button:hover {
+        outline: none;
+    }
+</style>
+
+<button on:click="{handleClick}">
+	{animal} {icon}
+</button>
+
+```
