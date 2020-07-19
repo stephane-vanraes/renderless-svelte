@@ -1,0 +1,7 @@
+---
+slug: svelte-svg
+---
+
+# Getting Started
+
+Easy peasy
