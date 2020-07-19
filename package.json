@@ -1,6 +1,6 @@
 {
   "name": "renderless-svelte",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A collection of renderless Svelte components",  
   "repository": {
     "url": "https://github.com/stephane-vanraes/renderless-svelte"
