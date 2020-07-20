@@ -33,8 +33,10 @@
 </style>
 
 <svelte:head>
-	<meta name="og:title" content="{title}">
+	<meta name="og:description" content="{title}">
 	<meta name="og:url" content="http://www.renderless-svelte.dev/{slug ? slug : ''}">
+	<meta name="twitter:description" content="{title}">
+	<meta name="twitter:url" content="http://www.renderless-svelte.dev/{slug ? slug : ''}">
 </svelte:head>
 
 <div>
