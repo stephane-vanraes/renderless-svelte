@@ -67,6 +67,11 @@
             <NavItem href="/components/notifications/example-banner" title="Banner" />
             <NavItem href="/components/notifications/example-log" title="As a log" />
         </NavItem>
+        <NavItem href="/components/carousel" title="Carousel">
+            <NavItem href="/components/carousel/example-plain" title="Plain" />
+            <NavItem href="/components/carousel/example-index" title="With index" />
+            <NavItem href="/components/carousel/example-noloop" title="Without looping" />
+        </NavItem>
     </div>
 </nav>
 <button on:click="{() => open = !open}">

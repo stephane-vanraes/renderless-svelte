@@ -20,7 +20,7 @@
         background-color: #e0e0e0;
         border-left: 2px solid var(--primary);
         display: block;
-        overflow-x: scroll;
+        overflow-x: auto;
         padding-top: .5rem;
         max-width: 100%;
         width: 100%;

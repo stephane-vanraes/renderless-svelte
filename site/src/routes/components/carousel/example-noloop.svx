@@ -1,0 +1,81 @@
+# A Carousel without looping
+
+This is a minor extension to the plain carousel, here the `currentIndex` is used to enable and disable the buttons when the edges of the array have been reached.
+
+<script>
+    import Carousel from '../../../../../src/Carousel.svelte'
+    const items = ["Squirrel 🐿️", "Rabbit 🐇", "Hamster 🐹"]
+</script>
+
+<style>
+    div {
+        display: flex;
+        flex-direction: row;
+        max-width: 400px;
+        width: 100%;
+    }
+    button {
+        border: 1px solid #c0c0c0;
+        flex: 0 0 13ch;
+        padding: .75rem .5rem;
+    }
+    button:disabled {
+        background-color: #c0c0c0;
+        color: #707070;
+    }
+    span {
+        border: 1px solid #c0c0c0;
+        flex: 1 0;
+        padding: .75rem .5rem;
+        text-align: center;
+    }
+</style>
+
+<Carousel items="{items}" let:payload let:controls let:currentIndex>
+    <div>
+	    <button on:click={controls.previous} disabled="{currentIndex == 0}">&lt; Previous</button>
+        <span>{currentIndex} {payload}</span>
+	    <button on:click={controls.next} disabled="{currentIndex == items.length-1}">Next &gt;</button>
+    </div>
+</Carousel>
+
+**App.svelte**
+
+```svelte
+<script>
+    import Carousel from 'renderless-svelte'
+    const items = ["Squirrel 🐿️", "Rabbit 🐇", "Hamster 🐹"]
+</script>
+
+<style>
+    div {
+        display: flex;
+        flex-direction: row;
+        max-width: 400px;
+        width: 100%;
+    }
+    button {
+        border: 1px solid #c0c0c0;
+        flex: 0 0 13ch;
+        padding: .75rem .5rem;
+    }
+    button:disabled {
+        background-color: #c0c0c0;
+        color: #707070;
+    }
+    span {
+        border: 1px solid #c0c0c0;
+        flex: 1 0;
+        padding: .75rem .5rem;
+        text-align: center;
+    }
+</style>
+
+<Carousel items="{items}" let:payload let:controls let:currentIndex>
+    <div>
+	    <button on:click={controls.previous} disabled="{currentIndex == 0}">&lt; Previous</button>
+        <span>{currentIndex} {payload}</span>
+	    <button on:click={controls.next} disabled="{currentIndex == items.length-1}">Next &gt;</button>
+    </div>
+</Carousel>
+```

@@ -44,3 +44,9 @@ Considering the notification is renderless it does not come with any animations 
     <span in:fly={{ duration: 500, y: 300}}>{payload}</span>
 </Notification>
 ```
+
+## Examples
+
+* [Popup notification](http://www.renderless-svelte.dev/components/notifications/example-popup) 
+* [Banner notification](http://www.renderless-svelte.dev/components/notifications/example-banner) 
+* [Notification log](http://www.renderless-svelte.dev/components/notifications/example-log)
