@@ -1,0 +1,108 @@
+---
+slug: components/tabcontrol/example-basic
+title: A basic TabControl
+---
+
+# Basic TabControl
+
+This is probably the most straightforward TabControl there is.  Here we have three simply tabs, the header is automatically filled with the title for each tab.
+
+Note that we have wrapped all _TabControlItem_s together into the div with class 'tab' instead of the content of each TabControlItem individually.  Thanks to the use of slots only the active one will be rendered anyway.
+
+<script>
+    import { TabControl, TabControlItem } from '../../../../../src/index.js'
+</script>
+
+<style>
+    .tabs {        
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+    }
+    button {
+        border: 1px solid #c0c0c0;
+        flex: 1 0;
+        padding: .25rem .5rem;
+    }
+    button.active {
+        background-color: var(--secondary);
+        color: white;
+    }
+    .tab {
+        border: 1px solid #c0c0c0;
+        display: block;
+        height: 5rem;
+        margin-top: 0;
+        padding: 1rem;
+    }
+</style>
+
+<TabControl>
+    <div class="tabs" slot="tabs" let:tabs>        
+        {#each tabs as { active, title, select }}
+            <button class:active on:click="{select}">{title}</button>
+        {/each}
+    </div>
+    <div class="tab">
+        <TabControlItem title="Squirrel 🐿️" active>
+                This is a text about Squirrels 🐿️
+        </TabControlItem>
+        <TabControlItem title="Rabbit 🐇">
+            This is a text about Rabbits 🐇
+        </TabControlItem>
+        <TabControlItem title="Hamster 🐹">
+            This is a text about Hamsters 🐹
+        </TabControlItem>
+    </div>
+</TabControl>
+
+**App.svelte**
+
+```svelte
+<script>
+    import { TabControl, TabControlItem } from 'renderless-svelte'
+</script>
+
+<style>
+    .tabs {        
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+    }
+    button {
+        border: 1px solid #c0c0c0;
+        flex: 1 0;
+        padding: .25rem .5rem;
+    }
+    button.active {
+        background-color: var(--secondary);
+        color: white;
+    }
+    .tab {
+        border: 1px solid #c0c0c0;
+        display: block;
+        height: 5rem;
+        margin-top: 0;
+        padding: 1rem;
+    }
+</style>
+
+<TabControl>
+    <div class="tabs" slot="tabs" let:tabs>        
+        {#each tabs as { active, title, select }}
+            <button class:active on:click="{select}">{title}</button>
+        {/each}
+    </div>
+    <div class="tab">
+        <TabControlItem title="Squirrel 🐿️" active>
+                This is a text about Squirrels 🐿️
+        </TabControlItem>
+        <TabControlItem title="Rabbit 🐇">
+            This is a text about Rabbits 🐇
+        </TabControlItem>
+        <TabControlItem title="Hamster 🐹">
+            This is a text about Hamsters 🐹
+        </TabControlItem>
+    </div>
+</TabControl>
+```

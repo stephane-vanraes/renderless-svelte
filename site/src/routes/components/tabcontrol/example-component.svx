@@ -1,0 +1,133 @@
+---
+slug: components/tabcontrol/example-component
+title: A TabControl with a Component
+---
+
+# TabControl with a Component
+
+In this example we can see that it's easy to define a component for the actual content of the tab.
+
+Note that in this case it is always the same content, but this does not have to be so.
+
+<script>
+    import { TabControl, TabControlItem } from '../../../../../src/index.js'
+    import Information from './_Information.svelte'
+</script>
+
+<style>
+    .tabs {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+    }
+    button {
+        border: 1px solid #c0c0c0;
+        flex: 1 0;
+        padding: .25rem .5rem;
+    }
+    button.active {
+        background-color: var(--secondary);
+        color: white;
+    }
+    .tab {
+        border: 1px solid #c0c0c0;
+        display: block;
+        height: 10rem;
+        margin-top: 0;
+        padding: 1rem;
+    }
+</style>
+
+<TabControl>
+    <div class="tabs" slot="tabs" let:tabs>
+        {#each tabs as { active, title, select }}
+            <button class:active on:click="{select}">{title}</button>
+        {/each}
+    </div>
+    <div class="tab">
+        <TabControlItem title="Squirrel 🐿️" active>
+            <Information animal="Squirrel" icon="🐿️" />
+        </TabControlItem>
+        <TabControlItem title="Rabbit 🐇">
+            <Information animal="Rabbit" icon="🐇" />
+        </TabControlItem>
+        <TabControlItem title="Hamster 🐹">
+            <Information animal="Hamster" icon="🐹" />
+        </TabControlItem>
+    </div>
+</TabControl>
+
+**App.svelte**
+
+```svelte
+<script>
+    import { TabControl, TabControlItem } from 'renderless-svelte'
+    import Information from './Information.svelte'
+</script>
+
+<style>
+    .tabs {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+    }
+    button {
+        border: 1px solid #c0c0c0;
+        flex: 1 0;
+        padding: .25rem .5rem;
+    }
+    button.active {
+        background-color: var(--secondary);
+        color: white;
+    }
+    .tab {
+        border: 1px solid #c0c0c0;
+        display: block;
+        height: 10rem;
+        margin-top: 0;
+        padding: 1rem;
+    }
+</style>
+
+<TabControl>
+    <div class="tabs" slot="tabs" let:tabs>
+        {#each tabs as { active, title, select }}
+            <button class:active on:click="{select}">{title}</button>
+        {/each}
+    </div>
+    <div class="tab">
+        <TabControlItem title="Squirrel 🐿️" active>
+            <Information animal="Squirrel" icon="🐿️" />
+        </TabControlItem>
+        <TabControlItem title="Rabbit 🐇">
+            <Information animal="Rabbit" icon="🐇" />
+        </TabControlItem>
+        <TabControlItem title="Hamster 🐹">
+            <Information animal="Hamster" icon="🐹" />
+        </TabControlItem>
+    </div>
+</TabControl>
+```
+
+**Information.svelte**
+
+```svelte
+<script>
+    export let animal
+    export let icon
+</script>
+
+<style>
+    hr {
+        margin: 1rem 0;
+    }
+</style>
+
+<h2>{icon} {animal}</h2>
+
+<hr />
+
+<div>
+    You chose this animal {icon} to be shown.
+</div>
+```

@@ -2,7 +2,7 @@
     import { stores } from '@sapper/app'
     import { fly } from 'svelte/transition'
     import NavItem from './NavItem.svelte'
-    
+
     const { page } = stores()
     let open = false
 
@@ -52,7 +52,7 @@
         }
         nav.open {
             display: block;
-        }        
+        }
     }
 </style>
 
@@ -62,11 +62,6 @@
     <NavItem href="/getting-started" title="Getting Started" />
     <NavItem title="Components" />
     <div>
-        <NavItem href="/components/notifications" title="Notifications">
-            <NavItem href="/components/notifications/example-popup" title="Simple popup" />
-            <NavItem href="/components/notifications/example-banner" title="Banner" />
-            <NavItem href="/components/notifications/example-log" title="As a log" />
-        </NavItem>
         <NavItem href="/components/carousel" title="Carousel">
             <NavItem href="/components/carousel/example-plain" title="Plain" />
             <NavItem href="/components/carousel/example-index" title="With index" />
@@ -76,6 +71,16 @@
             <NavItem href="/components/modal/example-plain" title="Plain" />
             <NavItem href="/components/modal/example-component" title="Component Based" />
             <NavItem href="/components/modal/example-dynamic" title="Dynamic Content" />
+        </NavItem>
+        <NavItem href="/components/notifications" title="Notifications">
+            <NavItem href="/components/notifications/example-popup" title="Simple popup" />
+            <NavItem href="/components/notifications/example-banner" title="Banner" />
+            <NavItem href="/components/notifications/example-log" title="As a log" />
+        </NavItem>
+        <NavItem href="/components/tabcontrol" title="TabControl">
+            <NavItem href="/components/tabcontrol/example-basic" title="Basic" />
+            <NavItem href="/components/tabcontrol/example-responsive" title="Responsive" />
+            <NavItem href="/components/tabcontrol/example-component" title="With component" />
         </NavItem>
     </div>
 </nav>

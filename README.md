@@ -6,8 +6,10 @@ Renderless components are components that do not render anything by themselves, 
 
 ## Components
 
-[Notifications](/docs/Notifications.md)
-
 [Carousel](/docs/Carousel.md)
 
 [Modal](/docs/Modal.md)
+
+[Notifications](/docs/Notifications.md)
+
+[TabControl](/docs/TabControl.md)
