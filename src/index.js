@@ -1,15 +1,19 @@
-import Notification from './Notifications.svelte'
-import{ notifications } from './Notifications.svelte'
 import Carousel from './Carousel.svelte'
+import Notification, { notifications } from './Notifications.svelte'
+import Modal, { openModal } from './Modal.svelte'
 
 export { 
     Carousel,
+    Modal,
     Notification,
-    notifications
+    notifications,
+    openModal
 }
 
 export const Renderless = {
     Carousel,
+    Modal,
     Notification,
-    notifications
+    notifications,
+    openModal
 }

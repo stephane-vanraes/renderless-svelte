@@ -27,9 +27,9 @@ Clicking any of the animals will trigger a popup, naming the animal clicked and 
 	}
 </style>
 
-<ActionButton animal="Squirrel" icon="🐿️"></ActionButton>
-<ActionButton animal="Rabbit" icon="🐇"></ActionButton>
-<ActionButton animal="Hamster" icon="🐹"></ActionButton>
+<ActionButton animal="Squirrel" icon="🐿️" />
+<ActionButton animal="Rabbit" icon="🐇" />
+<ActionButton animal="Hamster" icon="🐹" />
 
 <Notification let:payload duration="1000">
 	<span in:fly={{ duration: 500, y: 300}}>
@@ -61,9 +61,9 @@ Clicking any of the animals will trigger a popup, naming the animal clicked and 
 	}
 </style>
 
-<ActionButton animal="Squirrel" icon="🐿️"></ActionButton>
-<ActionButton animal="Rabbit" icon="🐇"></ActionButton>
-<ActionButton animal="Hamster" icon="🐹"></ActionButton>
+<ActionButton animal="Squirrel" icon="🐿️" />
+<ActionButton animal="Rabbit" icon="🐇" />
+<ActionButton animal="Hamster" icon="🐹" />
 
 <Notification let:payload duration="1000">
 	<span in:fly={{ duration: 500, y: 300}}>

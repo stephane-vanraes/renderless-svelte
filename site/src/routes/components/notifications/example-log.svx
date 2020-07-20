@@ -31,9 +31,9 @@ This example shows how you can use the Notification component to create a runnin
     }
 </style>
 
-<ActionButton animal="Squirrel" icon="🐿️"></ActionButton>
-<ActionButton animal="Rabbit" icon="🐇"></ActionButton>
-<ActionButton animal="Hamster" icon="🐹"></ActionButton>
+<ActionButton animal="Squirrel" icon="🐿️" />
+<ActionButton animal="Rabbit" icon="🐇" />
+<ActionButton animal="Hamster" icon="🐹" />
 
 <Notification duration="1000" on:notify="{ev => addToLog(ev.detail)}"/>
 <ul>
@@ -70,9 +70,9 @@ This example shows how you can use the Notification component to create a runnin
     }
 </style>
 
-<ActionButton animal="Squirrel" icon="🐿️"></ActionButton>
-<ActionButton animal="Rabbit" icon="🐇"></ActionButton>
-<ActionButton animal="Hamster" icon="🐹"></ActionButton>
+<ActionButton animal="Squirrel" icon="🐿️" />
+<ActionButton animal="Rabbit" icon="🐇" />
+<ActionButton animal="Hamster" icon="🐹" />
 
 <Notification duration="1000" on:notify="{ev => addToLog(ev.detail)}"/>
 <ul>

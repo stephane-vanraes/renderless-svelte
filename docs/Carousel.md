@@ -31,4 +31,6 @@ There are no default animations in the Carousel
 
 ## Examples
 
-* [Popup notification](http://www.renderless-svelte.dev/components/carousel/example-??) 
+* [Plain carousel](http://www.renderless-svelte.dev/components/carousel/example-plain)
+* [Carousel with index](http://www.renderless-svelte.dev/components/carousel/example-index)
+* [Non-looping carousel](http://www.renderless-svelte.dev/components/carousel/example-noloop)

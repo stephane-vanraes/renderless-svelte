@@ -72,6 +72,11 @@
             <NavItem href="/components/carousel/example-index" title="With index" />
             <NavItem href="/components/carousel/example-noloop" title="Without looping" />
         </NavItem>
+        <NavItem href="/components/modal" title="Modal">
+            <NavItem href="/components/modal/example-plain" title="Plain" />
+            <NavItem href="/components/modal/example-component" title="Component Based" />
+            <NavItem href="/components/modal/example-dynamic" title="Dynamic Content" />
+        </NavItem>
     </div>
 </nav>
 <button on:click="{() => open = !open}">

@@ -28,9 +28,9 @@ Clicking any of the animals will trigger the banner, naming the animal clicked a
 	}
 </style>
 
-<ActionButton animal="Squirrel" icon="🐿️"></ActionButton>
-<ActionButton animal="Rabbit" icon="🐇"></ActionButton>
-<ActionButton animal="Hamster" icon="🐹"></ActionButton>
+<ActionButton animal="Squirrel" icon="🐿️" />
+<ActionButton animal="Rabbit" icon="🐇" />
+<ActionButton animal="Hamster" icon="🐹" />
 
 <Notification let:payload duration="5000">
 	<span in:fade={{ duration: 250 }}>
@@ -63,9 +63,9 @@ Clicking any of the animals will trigger the banner, naming the animal clicked a
 	}
 </style>
 
-<ActionButton animal="Squirrel" icon="🐿️"></ActionButton>
-<ActionButton animal="Rabbit" icon="🐇"></ActionButton>
-<ActionButton animal="Hamster" icon="🐹"></ActionButton>
+<ActionButton animal="Squirrel" icon="🐿️" />
+<ActionButton animal="Rabbit" icon="🐇" />
+<ActionButton animal="Hamster" icon="🐹" />
 
 <Notification let:payload duration="1250">
 	<span in:fade={{ duration: 250 }}>

@@ -6,7 +6,7 @@
 <style>
     div {        
         display: block;
-        padding: .75rem 1rem;
+        padding: .75rem 2rem .75rem 1rem;
         position: relative;
         width: 100%;
     }
