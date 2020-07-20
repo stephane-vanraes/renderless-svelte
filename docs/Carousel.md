@@ -31,6 +31,6 @@ There are no default animations in the Carousel
 
 ## Examples
 
-* [Plain carousel](http://www.renderless-svelte.dev/components/carousel/example-plain)
-* [Carousel with index](http://www.renderless-svelte.dev/components/carousel/example-index)
-* [Non-looping carousel](http://www.renderless-svelte.dev/components/carousel/example-noloop)
+* [Plain carousel](https://www.renderless-svelte.dev/components/carousel/example-plain)
+* [Carousel with index](https://www.renderless-svelte.dev/components/carousel/example-index)
+* [Non-looping carousel](https://www.renderless-svelte.dev/components/carousel/example-noloop)

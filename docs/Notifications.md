@@ -47,6 +47,6 @@ Considering the notification is renderless it does not come with any animations 
 
 ## Examples
 
-* [Popup notification](http://www.renderless-svelte.dev/components/notifications/example-popup) 
-* [Banner notification](http://www.renderless-svelte.dev/components/notifications/example-banner) 
-* [Notification log](http://www.renderless-svelte.dev/components/notifications/example-log)
+* [Popup notification](https://www.renderless-svelte.dev/components/notifications/example-popup) 
+* [Banner notification](https://www.renderless-svelte.dev/components/notifications/example-banner) 
+* [Notification log](https://www.renderless-svelte.dev/components/notifications/example-log)

@@ -39,6 +39,6 @@ _ _close_ is a function that closes the Modal
 
 ## Examples
 
-* [Plain modal](http://www.renderless-svelte.dev/components/modal/example-plain)
-* [Component based](http://www.renderless-svelte.dev/components/modal/example-component)
-* [Dynamic content](http://www.renderless-svelte.dev/components/modal/example-dynamic)
+* [Plain modal](https://www.renderless-svelte.dev/components/modal/example-plain)
+* [Component based](https://www.renderless-svelte.dev/components/modal/example-component)
+* [Dynamic content](https://www.renderless-svelte.dev/components/modal/example-dynamic)
