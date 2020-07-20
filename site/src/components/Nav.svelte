@@ -1,14 +1,19 @@
 <script>
+    import { stores } from '@sapper/app'
     import { fly } from 'svelte/transition'
     import NavItem from './NavItem.svelte'
-    let open = false;
+    
+    const { page } = stores()
+    let open = false
+
+    page.subscribe(_ => open = false)
 </script>
 
 <style>
     nav {
         background-color: var(--secondary);
         color: white;
-        flex: 0 0;
+        flex: 0 0 20ch;
     }
 
     button {
