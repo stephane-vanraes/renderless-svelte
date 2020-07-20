@@ -4,13 +4,21 @@
 </script>
 
 <style>
+    .wrapper {
+        display: flex;
+        flex: 1 0;
+        flex-direction: row;
+        position: relative;
+    }
     main {
-        display: inline-block;
-        vertical-align: top;
-        margin-left: 25ch;
-        margin-top: 50px;
-        width: calc(100% - 25ch);
+        flex: 1 0 550px;
     }
 </style>
 
-<Header /><Nav /><main><slot></slot></main>
+<Header />
+<div class="wrapper">
+    <Nav />
+    <main>
+        <slot></slot>
+    </main>
+</div>

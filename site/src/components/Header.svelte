@@ -4,13 +4,13 @@
 
 <style>
     header {
+        align-items: flex-start;
         background: white;
         box-shadow: 0 -0.4rem 0.9rem 0.2rem rgba(0,0,0,.5);
         display: flex;
+        flex: 0 0;
         flex-direction: row;
-        height: 50px;
         padding: 5px;
-        position: fixed;
         width: 100%;
         z-index: 100;
     }
@@ -36,13 +36,23 @@
     .logo {
         fill: var(--primary);
         height: 40px;
-        width: 80px;
+        margin-right: 1rem;
+        width: 40px;
     }
     .github {
         fill: black;
         height: 40px;
         margin-right: 1rem;
         width: 40px;        
+    }
+
+    @media screen and (max-width: 550px) {
+        .github {
+            margin-right: 0;
+        }
+        .github + span {
+            display: none;
+        }
     }
 </style>
 
