@@ -3,11 +3,11 @@ slug: components/notifications/example-banner
 title: A Banner Notification
 ---
 
-# Popup Notification
+# Banner Notification
 
-This is a very basic implementation of a pop-up notification.
+In this example the notifactions are rendered as a banner on top of this section of the page.
 
-Clicking any of the animals will trigger a popup, naming the animal clicked and as many little icons of said animal as has been clicked.
+Clicking any of the animals will trigger the banner, naming the animal clicked and as many little icons of said animal as has been clicked.
 
 <script>
 	import { fade } from 'svelte/transition' 
@@ -23,7 +23,7 @@ Clicking any of the animals will trigger a popup, naming the animal clicked and 
         left: 0;
         margin: 0;
         padding: 1rem;
-        top: 0;
+        top: -1rem;
         width: 100%;
 	}
 </style>
@@ -32,7 +32,7 @@ Clicking any of the animals will trigger a popup, naming the animal clicked and 
 <ActionButton animal="Rabbit" icon="🐇"></ActionButton>
 <ActionButton animal="Hamster" icon="🐹"></ActionButton>
 
-<Notification let:payload duration="1250">
+<Notification let:payload duration="5000">
 	<span in:fade={{ duration: 250 }}>
         {payload.animal}
         {#each Array(payload.i) as i}
@@ -58,7 +58,7 @@ Clicking any of the animals will trigger a popup, naming the animal clicked and 
         left: 0;
         margin: 0;
         padding: 1rem;
-        top: 0;
+        top: -.75rem;
         width: 100%;
 	}
 </style>
