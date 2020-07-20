@@ -1,3 +1,8 @@
+<script>
+    export let slug
+    export let title
+</script>
+
 <style>
     div {        
         display: block;
@@ -26,6 +31,11 @@
         width: 100%;
     }
 </style>
+
+<svelte:head>
+	<meta name="og:title" content="{title}">
+	<meta name="og:url" content="http://www.renderless-svelte.dev/{slug ? slug : ''}">
+</svelte:head>
 
 <div>
     <slot></slot>

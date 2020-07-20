@@ -1,3 +1,8 @@
+---
+slug: components/notifications
+title: Notifications
+---
+
 # Notifications
 
 This is a straightforward Notification component consisting of two parts:

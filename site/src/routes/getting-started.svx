@@ -1,3 +1,8 @@
+---
+slug: getting-started
+title: Getting Started
+---
+
 # Getting Started
 
 Add `renderless-svelte` as a dependency to your project

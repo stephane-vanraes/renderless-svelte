@@ -1,3 +1,8 @@
+---
+slug: components/notifications/example-banner
+title: A Banner Notification
+---
+
 # Popup Notification
 
 This is a very basic implementation of a pop-up notification.

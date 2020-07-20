@@ -1,3 +1,8 @@
+---
+slug: components/carousel/example-index
+title: A plain Carousel example
+---
+
 # A Plain Carousel
 
 This is the most basic carousel, a simple block with a previous and next button

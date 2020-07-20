@@ -1,3 +1,8 @@
+---
+slug: components/notifications/example-log
+title: A Notification Log
+---
+
 # Notification Log
 
 This example shows how you can use the Notification component to create a running log.

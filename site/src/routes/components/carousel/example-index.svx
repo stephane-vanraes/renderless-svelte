@@ -1,3 +1,8 @@
+---
+slug: components/carousel/example-index
+title: A Carousel with rapid access index
+---
+
 # A Carousel with index
 
 In this carousel there is in addition to the next and previous buttons also a rapid access index provided.

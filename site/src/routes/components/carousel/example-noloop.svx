@@ -1,3 +1,8 @@
+---
+slug: components/carousel/example-noloop
+title: A Carousel without looping
+---
+
 # A Carousel without looping
 
 This is a minor extension to the plain carousel, here the `currentIndex` is used to enable and disable the buttons when the edges of the array have been reached.
