@@ -17,7 +17,8 @@ Each tab object itself comes with the following data
 
 - _title_ the text to be displayed
 - _active_ flag indicating if this is the active tab
-_ _select_ a function allowing this tab to be selected
+- _disabled_ flag indicating the field is disabled
+- _select_ a function allowing this tab to be selected
 
 ```html
 <script>
@@ -41,6 +42,7 @@ This component creates an item in the TabControl, it will simply wrap a slot tha
 
 - _title_ this is the text rendered in the header and is also used to differentiate between two tabs (so it should be unique)
 - _active_ a flag indicating the initial state of the tab, defaults to false
+- _disabled_ flag indicating the field is disabled
 
 ## Examples
 

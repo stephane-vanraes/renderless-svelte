@@ -25,8 +25,11 @@ Note that we have wrapped all _TabControlItem_s together into the div with class
         padding: .25rem .5rem;
     }
     button.active {
-        background-color: var(--secondary);
+        background-color: var(--primary);
         color: white;
+    }
+    button:disabled {
+        background-color: #707070;
     }
     .tab {
         border: 1px solid #c0c0c0;
@@ -39,8 +42,8 @@ Note that we have wrapped all _TabControlItem_s together into the div with class
 
 <TabControl>
     <div class="tabs" slot="tabs" let:tabs>        
-        {#each tabs as { active, title, select }}
-            <button class:active on:click="{select}">{title}</button>
+        {#each tabs as { active, disabled, title, select }}
+            <button class:active on:click="{select}" {disabled}>{title}</button>
         {/each}
     </div>
     <div class="tab">
@@ -52,6 +55,9 @@ Note that we have wrapped all _TabControlItem_s together into the div with class
         </TabControlItem>
         <TabControlItem title="Hamster 🐹">
             This is a text about Hamsters 🐹
+        </TabControlItem>
+        <TabControlItem title="Dragon 🐉" disabled>
+            This is a text about Dragons 🐉
         </TabControlItem>
     </div>
 </TabControl>
@@ -75,8 +81,11 @@ Note that we have wrapped all _TabControlItem_s together into the div with class
         padding: .25rem .5rem;
     }
     button.active {
-        background-color: var(--secondary);
+        background-color: var(--primary);
         color: white;
+    }
+    button:disabled {
+        background-color: #707070;
     }
     .tab {
         border: 1px solid #c0c0c0;
@@ -89,8 +98,8 @@ Note that we have wrapped all _TabControlItem_s together into the div with class
 
 <TabControl>
     <div class="tabs" slot="tabs" let:tabs>        
-        {#each tabs as { active, title, select }}
-            <button class:active on:click="{select}">{title}</button>
+        {#each tabs as { active, disabled, title, select }}
+            <button class:active on:click="{select} {disabled}">{title}</button>
         {/each}
     </div>
     <div class="tab">
@@ -102,6 +111,9 @@ Note that we have wrapped all _TabControlItem_s together into the div with class
         </TabControlItem>
         <TabControlItem title="Hamster 🐹">
             This is a text about Hamsters 🐹
+        </TabControlItem>
+        <TabControlItem title="Dragon 🐉" disabled>
+            This is a text about Dragons 🐉
         </TabControlItem>
     </div>
 </TabControl>
