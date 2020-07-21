@@ -20,6 +20,7 @@
 	$: tab = $_tabs.find(t => title === t.title)
 	$: _active = tab && tab.active
 	$: _tabs.update(t1 => t1.map(t2 => t2.title === title ? ({ ...t2, disabled }) : t2))
+	$: _tabs.update(t1 => t1.map(t2 => t2.title === title ? ({ ...t2, active }) : { ...t2, active: active ? false : t2.active }))
 </script>
 
 {#if _active}
