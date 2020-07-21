@@ -1,5 +1,5 @@
 <script>
-	import { getContext } from 'svelte'
+	import { getContext, onMount } from 'svelte'
 	
 	const { _tabs, setTab } = getContext('tabcontrols_tabs')
 	
@@ -9,15 +9,17 @@
 	
 	const select = () => setTab(title)
 	
-	$: _tabs.update(t => [...t, {		
-		active,
-		disabled,
-		select,
-		title
-	}])
+	onMount(() => _tabs.update(t => [...t, {		
+			active,
+			disabled,
+			select,
+			title
+		}])
+	)
 	
 	$: tab = $_tabs.find(t => title === t.title)
 	$: _active = tab && tab.active
+	$: _tabs.update(t1 => t1.map(t2 => t2.title === title ? ({ ...t2, disabled }) : t2))
 </script>
 
 {#if _active}
