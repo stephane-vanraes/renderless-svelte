@@ -1,8 +1,3 @@
----
-slug: components/tabcontrol
-title: TabControl
----
-
 # TabControl
 
 This component offers an easy way to create tab controls.  It consists of two parts: the TabControl itself and TabControlItems.

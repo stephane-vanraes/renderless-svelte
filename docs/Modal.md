@@ -1,8 +1,3 @@
----
-slug: components/modal
-title: Modal
----
-
 # Modal
 
 The Modal component encapsulates typically modal behaviour as opening and closing, it does this while ensuring only one Modal is open at all times. As always in Renderless-Svelte the actual implementation of the look and feel of the Modal, including potential backdrops is completely up to the user.
