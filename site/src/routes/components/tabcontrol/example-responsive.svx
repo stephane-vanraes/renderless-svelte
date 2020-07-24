@@ -25,7 +25,7 @@ This is a variant that switches between tabs on the side of the panel or on top 
     }
     button {
         border: 1px solid #c0c0c0;
-        flex: 1 0 13ch;
+        flex: 1 0 15ch;
         padding: .25rem .5rem;
     }
     button.active {
@@ -44,18 +44,18 @@ This is a variant that switches between tabs on the side of the panel or on top 
 <div class="wrapper">
     <TabControl>
         <div class="tabs" slot="tabs" let:tabs>        
-            {#each tabs as { active, title, select }}
-                <button class:active on:click="{select}">{title}</button>
+            {#each tabs as { active, payload, select }}
+                <button class:active on:click="{select}">{payload}</button>
             {/each}
         </div>
         <div class="tab">
-            <TabControlItem title="Squirrel 🐿️" active>
+            <TabControlItem id="S" payload="Squirrel 🐿️" active>
                     This is a text about Squirrels 🐿️
             </TabControlItem>
-            <TabControlItem title="Rabbit 🐇">
+            <TabControlItem id="R" payload="Rabbit 🐇">
                 This is a text about Rabbits 🐇
             </TabControlItem>
-            <TabControlItem title="Hamster 🐹">
+            <TabControlItem id="H" payload="Hamster 🐹">
                 This is a text about Hamsters 🐹
             </TabControlItem>
         </div>
@@ -101,18 +101,18 @@ This is a variant that switches between tabs on the side of the panel or on top 
 
 <TabControl>
     <div class="tabs" slot="tabs" let:tabs>        
-        {#each tabs as { active, title, select }}
-            <button class:active on:click="{select}">{title}</button>
+        {#each tabs as { active, payload, select }}
+            <button class:active on:click="{select}">{payload}</button>
         {/each}
     </div>
     <div class="tab">
-        <TabControlItem title="Squirrel 🐿️" active>
+        <TabControlItem id="S" payload="Squirrel 🐿️" active>
                 This is a text about Squirrels 🐿️
         </TabControlItem>
-        <TabControlItem title="Rabbit 🐇">
+        <TabControlItem id="R" payload="Rabbit 🐇">
             This is a text about Rabbits 🐇
         </TabControlItem>
-        <TabControlItem title="Hamster 🐹">
+        <TabControlItem id="H" payload="Hamster 🐹">
             This is a text about Hamsters 🐹
         </TabControlItem>
     </div>

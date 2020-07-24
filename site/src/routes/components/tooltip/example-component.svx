@@ -1,0 +1,128 @@
+---
+slug: components/tooltip/example-components
+title: A dynamic Tooltip
+---
+
+# A dynamic Tooltip
+
+Here we pass a component in with the action, through the use of `<svelte:component>` we can then have a completely different rendering based on the options passed in from the action, allowing for great flexibility.
+
+<script>
+    import { tooltip, Tooltip } from '../../../../../src/index.js'
+	import Component1 from './_Component1.svelte'
+	import Component2 from './_Component2.svelte'
+</script>
+
+<style>
+    button {
+        margin: 2rem 1rem;
+        padding: 1rem;
+    }
+</style>
+
+<button use:tooltip="{{component: Component2, description: 'Something about squirrels', text: 'Squirrel', icon: '🐿️'}}">🐿️</button>
+<button use:tooltip="{{component: Component2, description: 'Something about rabbits', text: 'Rabbit', icon: '🐇'}}">🐇</button>
+<button use:tooltip="{{component: Component1, text: 'Hamster', icon: '🐹'}}">🐹</button>
+
+<Tooltip let:options let:dimensions>
+	{#if options}
+		<svelte:component this="{options.component}" {dimensions} {...options} />
+	{/if}
+</Tooltip>
+
+**App.svelte**
+
+```svelte
+<script>
+    import { tooltip, Tooltip } from 'renderless-svelte'	import Component1 from './_Component1.svelte'
+	import Component2 from './_Component2.svelte'
+</script>
+
+<style>
+    button {
+        margin: 2rem 1rem;
+        padding: 1rem;
+    }
+</style>
+
+<button use:tooltip="{{component: Component2, description: 'Something about squirrels', text: 'Squirrel', icon: '🐿️'}}">🐿️</button>
+<button use:tooltip="{{component: Component2, description: 'Something about rabbits', text: 'Rabbit', icon: '🐇'}}">🐇</button>
+<button use:tooltip="{{component: Component1, text: 'Hamster', icon: '🐹'}}">🐹</button>
+
+<Tooltip let:options let:dimensions>
+	{#if options}
+		<svelte:component this="{options.component}" {dimensions} {...options} />
+	{/if}
+</Tooltip>
+```
+
+**Component1**
+
+```svelte
+<script>
+    export let icon
+    export let dimensions
+    export let text
+</script>
+
+<style>    
+	div {
+		background-color: black;
+		border-radius: .25rem;
+		color: white;
+		position: fixed;
+		padding: .25rem .5rem;
+		transform: translateX(-50%);
+	}
+	div:before {
+		border-style: solid;
+		border-width: 5px 5px 0 5px;
+		border-color: black transparent transparent transparent ;
+		content: '';
+		height: 0;
+		position: absolute;
+		left: calc(50% - 5px);
+		bottom: -5px;
+		width: 0;
+	}
+</style>
+
+<div style="left: {dimensions.x + (dimensions.width / 2)}px; top: calc({dimensions.y}px - 2.75rem - 5px);">{icon} {text}</div>
+```
+
+**Component2**
+
+```svelte
+<script>
+    export let description
+    export let icon
+    export let dimensions
+    export let text
+</script>
+
+<style>    
+	div {
+		background-color: black;
+		border-radius: .25rem;
+		color: white;
+		position: fixed;
+		padding: .25rem .5rem;
+	}
+	div:before {
+		border-style: solid;
+		border-width: 5px 5px 5px 0;
+		border-color: transparent black transparent transparent ;
+		content: '';
+		height: 0;
+		position: absolute;
+		left: -5px;
+		top: calc(50% - 5px);
+		width: 0;
+	}
+</style>
+
+<div style="left: {dimensions.x + dimensions.width + 5}px; top: calc({dimensions.y - (dimensions.height / 2) + 5}px);">
+    <h2>{icon} {text}</h2>
+    <span>{description}</span>
+</div>
+```

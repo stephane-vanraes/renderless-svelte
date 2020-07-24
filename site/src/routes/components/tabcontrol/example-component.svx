@@ -40,18 +40,18 @@ Note that in this case it is always the same content, but this does not have to 
 
 <TabControl>
     <div class="tabs" slot="tabs" let:tabs>
-        {#each tabs as { active, title, select }}
-            <button class:active on:click="{select}">{title}</button>
+        {#each tabs as { active, payload, select }}
+            <button class:active on:click="{select}">{payload}</button>
         {/each}
     </div>
     <div class="tab">
-        <TabControlItem title="Squirrel 🐿️" active>
+        <TabControlItem id="S" payload="Squirrel 🐿️" active>
             <Information animal="Squirrel" icon="🐿️" />
         </TabControlItem>
-        <TabControlItem title="Rabbit 🐇">
+        <TabControlItem id="R" payload="Rabbit 🐇">
             <Information animal="Rabbit" icon="🐇" />
         </TabControlItem>
-        <TabControlItem title="Hamster 🐹">
+        <TabControlItem id="H" payload="Hamster 🐹">
             <Information animal="Hamster" icon="🐹" />
         </TabControlItem>
     </div>
@@ -91,18 +91,18 @@ Note that in this case it is always the same content, but this does not have to 
 
 <TabControl>
     <div class="tabs" slot="tabs" let:tabs>
-        {#each tabs as { active, title, select }}
-            <button class:active on:click="{select}">{title}</button>
+        {#each tabs as { active, payload, select }}
+            <button class:active on:click="{select}">{payload}</button>
         {/each}
     </div>
     <div class="tab">
-        <TabControlItem title="Squirrel 🐿️" active>
+        <TabControlItem id="S" payload="Squirrel 🐿️" active>
             <Information animal="Squirrel" icon="🐿️" />
         </TabControlItem>
-        <TabControlItem title="Rabbit 🐇">
+        <TabControlItem id="R" payload="Rabbit 🐇">
             <Information animal="Rabbit" icon="🐇" />
         </TabControlItem>
-        <TabControlItem title="Hamster 🐹">
+        <TabControlItem id="H" payload="Hamster 🐹">
             <Information animal="Hamster" icon="🐹" />
         </TabControlItem>
     </div>

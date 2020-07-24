@@ -5,7 +5,7 @@ title: A basic TabControl
 
 # Basic TabControl
 
-This is probably the most straightforward TabControl there is.  Here we have three simply tabs, the header is automatically filled with the title for each tab.
+This is probably the most straightforward TabControl there is.  Here we have three simply tabs, the header is automatically filled with the payload for each tab.
 
 Note that we have wrapped all _TabControlItem_s together into the div with class 'tab' instead of the content of each TabControlItem individually.  Thanks to the use of slots only the active one will be rendered anyway.
 
@@ -28,6 +28,9 @@ Note that we have wrapped all _TabControlItem_s together into the div with class
         background-color: var(--primary);
         color: white;
     }
+    button:disabled {
+        background-color: #707070;
+    }
     .tab {
         border: 1px solid #c0c0c0;
         display: block;
@@ -39,19 +42,22 @@ Note that we have wrapped all _TabControlItem_s together into the div with class
 
 <TabControl>
     <div class="tabs" slot="tabs" let:tabs>        
-        {#each tabs as { active, title, select }}
-            <button class:active on:click="{select}">{title}</button>
+        {#each tabs as { active, disabled, payload, select }}
+            <button class:active on:click="{select}" {disabled}>{payload}</button>
         {/each}
     </div>
     <div class="tab">
-        <TabControlItem title="Squirrel 🐿️" active>
+        <TabControlItem id="S" payload="Squirrel 🐿️" active>
                 This is a text about Squirrels 🐿️
         </TabControlItem>
-        <TabControlItem title="Rabbit 🐇">
+        <TabControlItem id="R" payload="Rabbit 🐇">
             This is a text about Rabbits 🐇
         </TabControlItem>
-        <TabControlItem title="Hamster 🐹">
+        <TabControlItem id="H" payload="Hamster 🐹">
             This is a text about Hamsters 🐹
+        </TabControlItem>
+        <TabControlItem id="D" payload="Dragon 🐉" disabled>
+            This is a text about Dragons 🐉
         </TabControlItem>
     </div>
 </TabControl>
@@ -78,6 +84,9 @@ Note that we have wrapped all _TabControlItem_s together into the div with class
         background-color: var(--primary);
         color: white;
     }
+    button:disabled {
+        background-color: #707070;
+    }
     .tab {
         border: 1px solid #c0c0c0;
         display: block;
@@ -89,19 +98,22 @@ Note that we have wrapped all _TabControlItem_s together into the div with class
 
 <TabControl>
     <div class="tabs" slot="tabs" let:tabs>        
-        {#each tabs as { active, title, select }}
-            <button class:active on:click="{select}">{title}</button>
+        {#each tabs as { active, disabled, payload, select }}
+            <button class:active on:click="{select} {disabled}">{payload}</button>
         {/each}
     </div>
     <div class="tab">
-        <TabControlItem title="Squirrel 🐿️" active>
+        <TabControlItem id="S" payload="Squirrel 🐿️" active>
                 This is a text about Squirrels 🐿️
         </TabControlItem>
-        <TabControlItem title="Rabbit 🐇">
+        <TabControlItem id="R" payload="Rabbit 🐇">
             This is a text about Rabbits 🐇
         </TabControlItem>
-        <TabControlItem title="Hamster 🐹">
+        <TabControlItem id="H" payload="Hamster 🐹">
             This is a text about Hamsters 🐹
+        </TabControlItem>
+        <TabControlItem id="D" payload="Dragon 🐉" disabled>
+            This is a text about Dragons 🐉
         </TabControlItem>
     </div>
 </TabControl>

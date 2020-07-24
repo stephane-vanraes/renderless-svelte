@@ -3,7 +3,7 @@ import Notification, { notifications } from './Notifications.svelte'
 import Modal, { openModal } from './Modal.svelte'
 import TabControl from './TabControl.svelte'
 import TabControlItem from './TabControlItem.svelte'
-
+import Tooltip, { tooltip } from './Tooltip.svelte'
 export { 
     Carousel,
     Modal,
@@ -11,7 +11,9 @@ export {
     notifications,
     openModal,
     TabControl,
-    TabControlItem
+    TabControlItem,
+    Tooltip,
+    tooltip
 }
 
 export const Renderless = {
@@ -21,5 +23,7 @@ export const Renderless = {
     notifications,
     openModal,
     TabControl,
-    TabControlItem
+    TabControlItem,
+    Tooltip,
+    tooltip
 }
