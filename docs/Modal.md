@@ -34,7 +34,7 @@ _ _close_ is a function that closes the Modal
 <Modal let:payload let:close>
     <button on:click="{close}">Close</button>
     <span>{payload}</span>
-</Notification>
+</Modal>
 ```
 
 ## Examples
