@@ -47,9 +47,9 @@ In this example we can see how passing extra options can be used to differentiat
 <button use:tooltip="{{text: 'Rabbit'}}">🐇</button>
 <button use:tooltip="{{text: 'Hamster'}}">🐹</button>
 
-<Tooltip let:options let:position>
+<Tooltip let:options let:dimensions>
 	{#if options}
-		<div class="tooltip {options.css ? options.css : ''}" style="left: {position.x + (position.width / 2)}px; top: calc({position.y}px - 2.75rem - 5px);">
+		<div class="tooltip {options.css ? options.css : ''}" style="left: {dimensions.x + (dimensions.width / 2)}px; top: calc({dimensions.y}px - 2.75rem - 5px);">
 			<span>{options.text}</span>
 		</div>
 	{/if}
@@ -96,9 +96,9 @@ In this example we can see how passing extra options can be used to differentiat
 <button use:tooltip="{{text: 'Rabbit'}}">🐇</button>
 <button use:tooltip="{{text: 'Hamster'}}">🐹</button>
 
-<Tooltip let:options let:position>
+<Tooltip let:options let:dimensions>
 	{#if options}
-		<div class="tooltip {options.css ? options.css : ''}" style="left: {position.x + (position.width / 2)}px; top: calc({position.y}px - 2.75rem - 5px);">
+		<div class="tooltip {options.css ? options.css : ''}" style="left: {dimensions.x + (dimensions.width / 2)}px; top: calc({dimensions.y}px - 2.75rem - 5px);">
 			<span>{options.text}</span>
 		</div>
 	{/if}

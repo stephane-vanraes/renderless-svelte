@@ -1,9 +1,7 @@
 <script>
     export let icon
-    export let position
+    export let dimensions
     export let text
-
-    $: console.log(position)
 </script>
 
 <style>    
@@ -28,4 +26,4 @@
 	}
 </style>
 
-<div style="left: {position.x + (position.width / 2)}px; top: calc({position.y}px - 2.75rem - 5px);">{icon} {text}</div>
+<div style="left: {dimensions.x + (dimensions.width / 2)}px; top: calc({dimensions.y}px - 2.75rem - 5px);">{icon} {text}</div>

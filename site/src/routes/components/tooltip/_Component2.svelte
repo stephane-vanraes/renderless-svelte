@@ -1,10 +1,8 @@
 <script>
     export let description
     export let icon
-    export let position
+    export let dimensions
     export let text
-
-    $: console.log(position)
 </script>
 
 <style>    
@@ -28,7 +26,7 @@
 	}
 </style>
 
-<div style="left: {position.x + position.width + 5}px; top: calc({position.y - (position.height / 2) + 5}px);">
+<div style="left: {dimensions.x + dimensions.width + 5}px; top: calc({dimensions.y - (dimensions.height / 2) + 5}px);">
     <h2>{icon} {text}</h2>
     <span>{description}</span>
 </div>

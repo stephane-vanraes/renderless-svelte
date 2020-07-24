@@ -21,17 +21,17 @@ The `tooltip` action, exposed from the library can be added to any markup elemen
 
 ## The Tooltip component
 
-The Tooltip component itself can be placed anywhere in your markup, but it is recommended to place it somewhere near the top level.  It exposes two values: `options` and `position`.
+The Tooltip component itself can be placed anywhere in your markup, but it is recommended to place it somewhere near the top level.  It exposes two values: `options` and `dimensions`.
 
 - _options_ This is the same options as was passed to the action.
-- _position_ This are the coordinates and dimensions of the element (x, y, widht, height)
+- _dimensions_ This are the coordinates and dimensions of the element (x, y, widht, height)
 
 **`options` will be set to false if no element is hovered**
 
 ```svelte
-<Tooltip let:options let:position>
+<Tooltip let:options let:dimensions>
 	{#if options}
-		<div class="tooltip" style="left: {position.x}px; top: {position.y}px;">
+		<div class="tooltip" style="left: {dimensions.x}px; top: {dimensions.y}px;">
 			<span>{options.text}</span>
 		</div>
 	{/if}

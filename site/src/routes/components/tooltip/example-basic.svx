@@ -41,9 +41,9 @@ A very simple way and common way to have a tooltip is to use CSS to show it abov
 <button use:tooltip="{{text: 'Rabbit'}}">🐇</button>
 <button use:tooltip="{{text: 'Hamster'}}">🐹</button>
 
-<Tooltip let:options let:position>
+<Tooltip let:options let:dimensions>
 	{#if options}
-		<div class="tooltip" style="left: {position.x + (position.width / 2)}px; top: calc({position.y}px - 2.75rem - 5px);">
+		<div class="tooltip" style="left: {dimensions.x + (dimensions.width / 2)}px; top: calc({dimensions.y}px - 2.75rem - 5px);">
 			<span>{options.text}</span>
 		</div>
 	{/if}
@@ -84,9 +84,9 @@ A very simple way and common way to have a tooltip is to use CSS to show it abov
 <button use:tooltip="{{text: 'Rabbit'}}">🐇</button>
 <button use:tooltip="{{text: 'Hamster'}}">🐹</button>
 
-<Tooltip let:options let:position>
+<Tooltip let:options let:dimensions>
 	{#if options}
-		<div class="tooltip" style="left: {position.x + (position.width / 2)}px; top: calc({position.y}px - 2.75rem - 5px);">
+		<div class="tooltip" style="left: {dimensions.x + (dimensions.width / 2)}px; top: calc({dimensions.y}px - 2.75rem - 5px);">
 			<span>{options.text}</span>
 		</div>
 	{/if}

@@ -1,14 +1,14 @@
 <script context="module">
 	import { writable } from 'svelte/store'
 	let options = writable(false)
-	let position = writable({})
+	let dimensions = writable({})
 	
 	export const tooltip = (node, opts) => {
 		let _opts = opts
 		
 		const mouseover = () => {
 			options.set(_opts)
-			position.set(node.getBoundingClientRect())
+			dimensions.set(node.getBoundingClientRect())
 		}
 		const mouseout = () => {
 			options.set(false)
@@ -29,4 +29,4 @@
 	}
 </script>
 
-<slot options={$options} position={$position}></slot>
+<slot options={$options} dimensions={$dimensions}></slot>

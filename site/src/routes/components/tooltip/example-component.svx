@@ -24,9 +24,9 @@ Here we pass a component in with the action, through the use of `<svelte:compone
 <button use:tooltip="{{component: Component2, description: 'Something about rabbits', text: 'Rabbit', icon: '🐇'}}">🐇</button>
 <button use:tooltip="{{component: Component1, text: 'Hamster', icon: '🐹'}}">🐹</button>
 
-<Tooltip let:options let:position>
+<Tooltip let:options let:dimensions>
 	{#if options}
-		<svelte:component this="{options.component}" {position} {...options} />
+		<svelte:component this="{options.component}" {dimensions} {...options} />
 	{/if}
 </Tooltip>
 
@@ -49,9 +49,9 @@ Here we pass a component in with the action, through the use of `<svelte:compone
 <button use:tooltip="{{component: Component2, description: 'Something about rabbits', text: 'Rabbit', icon: '🐇'}}">🐇</button>
 <button use:tooltip="{{component: Component1, text: 'Hamster', icon: '🐹'}}">🐹</button>
 
-<Tooltip let:options let:position>
+<Tooltip let:options let:dimensions>
 	{#if options}
-		<svelte:component this="{options.component}" {position} {...options} />
+		<svelte:component this="{options.component}" {dimensions} {...options} />
 	{/if}
 </Tooltip>
 ```
@@ -61,10 +61,8 @@ Here we pass a component in with the action, through the use of `<svelte:compone
 ```svelte
 <script>
     export let icon
-    export let position
+    export let dimensions
     export let text
-
-    $: console.log(position)
 </script>
 
 <style>    
@@ -89,7 +87,7 @@ Here we pass a component in with the action, through the use of `<svelte:compone
 	}
 </style>
 
-<div style="left: {position.x + (position.width / 2)}px; top: calc({position.y}px - 2.75rem - 5px);">{icon} {text}</div>
+<div style="left: {dimensions.x + (dimensions.width / 2)}px; top: calc({dimensions.y}px - 2.75rem - 5px);">{icon} {text}</div>
 ```
 
 **Component2**
@@ -98,10 +96,8 @@ Here we pass a component in with the action, through the use of `<svelte:compone
 <script>
     export let description
     export let icon
-    export let position
+    export let dimensions
     export let text
-
-    $: console.log(position)
 </script>
 
 <style>    
@@ -125,7 +121,7 @@ Here we pass a component in with the action, through the use of `<svelte:compone
 	}
 </style>
 
-<div style="left: {position.x + position.width + 5}px; top: calc({position.y - (position.height / 2) + 5}px);">
+<div style="left: {dimensions.x + dimensions.width + 5}px; top: calc({dimensions.y - (dimensions.height / 2) + 5}px);">
     <h2>{icon} {text}</h2>
     <span>{description}</span>
 </div>
