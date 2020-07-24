@@ -82,6 +82,11 @@
             <NavItem href="/components/tabcontrol/example-responsive" title="Responsive" />
             <NavItem href="/components/tabcontrol/example-component" title="With component" />
         </NavItem>
+        <NavItem href="/components/tooltip" title="Tooltip">
+            <NavItem href="/components/tooltip/example-basic" title="Basic" />
+            <NavItem href="/components/tooltip/example-options" title="With options" />
+            <NavItem href="/components/tooltip/example-component" title="With components" />
+        </NavItem>
     </div>
 </nav>
 <button on:click="{() => open = !open}">
