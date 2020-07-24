@@ -7,6 +7,12 @@ title: Carousel
 
 A simple Carousel component
 
+## Examples
+
+* [Plain carousel](/components/carousel/example-plain)
+* [Carousel with index](/components/carousel/example-index)
+* [Non-looping carousel](/components/carousel/example-noloop)
+
 ## The Carousel component
 
 This component takes a list of items and index and will return the current index.  It exposes functions to go the next or previous item as well as way to _jump_ to a specified index.

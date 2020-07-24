@@ -21,8 +21,9 @@
     }
 
     div :global(pre) {
-        background-color: var(--secondary);
-        border-left: 2px solid var(--primary);
+        background-color: var(--white);
+        border: 0;
+        border-left: 2px solid var(--accent);
         display: block;
         overflow-x: auto;
         padding-top: .5rem;

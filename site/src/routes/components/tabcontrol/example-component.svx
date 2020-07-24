@@ -30,6 +30,7 @@ Note that in this case it is always the same content, but this does not have to 
         color: white;
     }
     .tab {
+        background-color: var(--white);
         border: 1px solid #c0c0c0;
         display: block;
         height: 10rem;
@@ -81,6 +82,7 @@ Note that in this case it is always the same content, but this does not have to 
         color: white;
     }
     .tab {
+        background-color: var(--white);
         border: 1px solid #c0c0c0;
         display: block;
         height: 10rem;

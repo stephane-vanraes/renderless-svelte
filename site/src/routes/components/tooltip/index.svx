@@ -11,6 +11,13 @@ The Tooltip component offers an easy distributed way of showing a tooltip in you
 import { Tooltip, tooltip } from 'renderless-svelte'
 ```
 
+## Examples
+
+* [Plain modal](/components/modal/example-plain)
+* [Component based](/components/modal/example-component)
+* [Dynamic content](/components/modal/example-dynamic)
+
+
 ## The tooltip action
 
 The `tooltip` action, exposed from the library can be added to any markup element, and takes an object as a parameter. This object can be use as a payload to send later on to the Tooltip component itself with the information from the hovered element.

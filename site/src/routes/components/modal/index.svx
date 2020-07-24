@@ -9,6 +9,12 @@ The Modal component encapsulates typically modal behaviour as opening and closin
 
 In order to work the Modal has to be defined in the markup _somewhere_, this can be easily done in places like _App.svelte_, or if using Sapper __layout.svelte_.  Since it shares resources accross the board, it could even be mounted as seperate component in the _index.js_ file.
 
+## Examples
+
+* [Plain modal](/components/modal/example-plain)
+* [Component based](/components/modal/example-component)
+* [Dynamic content](/components/modal/example-dynamic)
+
 ## The opening function
 
 The `open` function, exposed from the Modal takes as an argument a payload, it is this payload that will be send on to the Modal itself.

@@ -36,10 +36,10 @@ In this example we can see how passing extra options can be used to differentiat
 		width: 0;
 	}
     .orange {
-        background-color: var(--primary);
+        background-color: var(--accent);
     }
 	.orange:before {
-		border-top-color: var(--primary);
+		border-top-color: var(--accent);
 	}
 </style>
 

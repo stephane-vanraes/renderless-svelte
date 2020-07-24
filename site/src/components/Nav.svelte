@@ -11,21 +11,29 @@
 
 <style>
     nav {
-        background-color: var(--primary);
-        border-right: 2px solid var(--black);
-        flex: 0 0 20ch;
+        background-color: var(--primary-dark);
+        bottom: 20px;
+        display: none;
+        left: 0;
+        position: fixed;
+        top: 40px;
+        width: 100%;
+    }
+
+    nav.open {
+        display: block;
     }
 
     button {
         background-color: transparent;
         border-radius: 4px;
         border: none;
-        display: none;
-        fill: var(--primary);
-        position: fixed;
-        bottom: .5rem;
-        left: .5rem;
+        display: block;
+        fill: var(--white);
         height: 40px;
+        position: fixed;
+        right: .5rem;
+        top: 0;
         width: 40px;
         z-index: 100;
     }
@@ -34,26 +42,7 @@
     button:active,
     button:hover,
     button:focus {
-        background-color: var(--secondary);
-        fill: var(--black);
         outline: none;
-    }
-
-    @media screen and (max-width: 550px) {
-        button {
-            display: block;
-        }
-        nav {
-            border-right: 0;
-            display: none;
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            z-index: 99;
-        }
-        nav.open {
-            display: block;
-        }
     }
 </style>
 

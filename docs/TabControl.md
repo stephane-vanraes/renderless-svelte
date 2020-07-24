@@ -43,8 +43,6 @@ This component creates an item in the TabControl, it will simply wrap a slot tha
 
 ## Examples
 
-[Basic](https://www.renderless-svelte.dev/components/tabcontrol/example-basic)
-
-[Responsive](https://www.renderless-svelte.dev/components/tabcontrol/example-responsive)
-
-[With component](https://www.renderless-svelte.dev/components/tabcontrol/example-component)
+* [Basic](https://www.renderless-svelte.dev/components/tabcontrol/example-basic)
+* [Responsive](https://www.renderless-svelte.dev/components/tabcontrol/example-responsive)
+* [With component](https://www.renderless-svelte.dev/components/tabcontrol/example-component)

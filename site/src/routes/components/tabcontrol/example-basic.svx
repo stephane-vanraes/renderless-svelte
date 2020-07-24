@@ -32,6 +32,7 @@ Note that we have wrapped all _TabControlItem_s together into the div with class
         background-color: #707070;
     }
     .tab {
+        background-color: var(--white);
         border: 1px solid #c0c0c0;
         display: block;
         height: 5rem;
@@ -88,6 +89,7 @@ Note that we have wrapped all _TabControlItem_s together into the div with class
         background-color: #707070;
     }
     .tab {
+        background-color: var(--white);
         border: 1px solid #c0c0c0;
         display: block;
         height: 5rem;

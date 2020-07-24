@@ -7,6 +7,12 @@ title: TabControl
 
 This component offers an easy way to create tab controls.  It consists of two parts: the TabControl itself and TabControlItems.
 
+## Examples
+
+* [Basic](/components/tabcontrol/example-basic)
+* [Responsive](/components/tabcontrol/example-responsive)
+* [With component](/components/tabcontrol/example-component)
+
 ## The TabControl
 
 The TabControl is the container for the TabControlItem and exposes a slot named 'tabs' that can be used to render the actual controls themselves. The _tabs_ header comes with an exported property 'tabs' that has the details for each tab.  The tabs are identified by a property _id_ that has to be unique.

@@ -17,10 +17,13 @@ Clicking any of the animals will trigger a popup, naming the animal clicked and 
 
 <style>
 	span {
-		background: var(--primary);
+		background: var(--secondary);
+        border-color: var(--accent);
+        border-style: solid;
 		border-top-left-radius: .5rem;
+        border-width: 2px 0 0 2px;
 		bottom: 0rem;
-		color: white;
+		color: var(--black);
 		padding: 1rem;
 		position: fixed;
 		right: 0rem;
@@ -51,8 +54,11 @@ Clicking any of the animals will trigger a popup, naming the animal clicked and 
 
 <style>
 	span {
-		background: var(--primary);
+		background: var(--secondary);
+        border-color: var(--accent);
+        border-style: solid;
 		border-top-left-radius: .5rem;
+        border-width: 2px 0 0 2px;
 		bottom: 0rem;
 		color: black;
 		padding: 1rem;

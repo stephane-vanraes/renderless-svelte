@@ -10,7 +10,7 @@
 <style>
     a,
     span {
-        color: var(--black);
+        color: var(--white);
         display: block;
         padding: .375rem 1rem;
     }

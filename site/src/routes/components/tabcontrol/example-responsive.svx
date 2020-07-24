@@ -33,6 +33,7 @@ This is a variant that switches between tabs on the side of the panel or on top 
         color: white;
     }
     .tab {
+        background-color: var(--white);
         border: 1px solid #c0c0c0;
         display: block;
         flex: 1 0 80%;
@@ -91,6 +92,7 @@ This is a variant that switches between tabs on the side of the panel or on top 
         color: white;
     }
     .tab {
+        background-color: var(--white);
         border: 1px solid #c0c0c0;
         display: block;
         flex: 1 0 80%;

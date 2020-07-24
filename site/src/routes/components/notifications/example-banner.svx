@@ -17,15 +17,16 @@ Clicking any of the animals will trigger the banner, naming the animal clicked a
 
 <style>
 	span {
-		background: var(--primary);
+		background: var(--secondary);
         box-shadow: 0 4px 4px rgba(0,0,0,.75);
         color: white;
-        position: absolute;
+        position: fixed;
         left: 0;
         margin: 0;
         padding: 1rem;
         top: -1rem;
         width: 100%;
+        z-index: 200;
 	}
 </style>
 
@@ -53,15 +54,16 @@ Clicking any of the animals will trigger the banner, naming the animal clicked a
 
 <style>
 	span {
-		background: var(--primary);
+		background: var(--secondary);
         box-shadow: 0 4px 4px rgba(0,0,0,.75);
         color: white;
-        position: absolute;
+        position: fixed;
         left: 0;
         margin: 0;
         padding: 1rem;
-        top: -.75rem;
+        top: -1rem;
         width: 100%;
+        z-index: 200;
 	}
 </style>
 

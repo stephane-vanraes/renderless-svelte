@@ -10,6 +10,12 @@ This is a straightforward Notification component consisting of two parts:
 - a shared notification queue
 - a wrapper for the actual notification
 
+## Examples
+
+* [Popup notification](/components/notifications/example-popup) 
+* [Banner notification](/components/notifications/example-banner) 
+* [Notification log](/components/notifications/example-log)
+
 ## The queue
 
 The queue is a readonly svelte store that exposes two additional functions:
