@@ -25,7 +25,7 @@ Note that we have wrapped all _TabControlItem_s together into the div with class
         padding: .25rem .5rem;
     }
     button.active {
-        background-color: var(--secondary);
+        background-color: var(--primary);
         color: white;
     }
     .tab {
@@ -75,7 +75,7 @@ Note that we have wrapped all _TabControlItem_s together into the div with class
         padding: .25rem .5rem;
     }
     button.active {
-        background-color: var(--secondary);
+        background-color: var(--primary);
         color: white;
     }
     .tab {

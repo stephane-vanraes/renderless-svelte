@@ -5,8 +5,9 @@
 <style>
     header {
         align-items: flex-start;
-        background: white;
-        box-shadow: 0 -0.4rem 0.9rem 0.2rem rgba(0,0,0,.5);
+        background: var(--secondary);
+        border-bottom: 2px solid var(--black);
+        color: var(--primary);
         display: flex;
         flex: 0 0;
         flex-direction: row;
@@ -34,13 +35,13 @@
     } 
 
     .logo {
-        fill: var(--primary);
+        fill: currentColor;
         height: 40px;
         margin-right: 1rem;
         width: 40px;
     }
     .github {
-        fill: black;
+        fill: currentColor;
         height: 40px;
         margin-right: 1rem;
         width: 40px;        

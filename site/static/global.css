@@ -1,6 +1,9 @@
 :root {
-	--primary: #ff3e00;
-	--secondary: #676778;
+	--svelte: #ff3e00;
+	--primary: #5e2bff;
+	--secondary: #F3FAE1;
+	--black: #040404;
+	--white: #fcfcfc;
 }
 
 * {
@@ -12,6 +15,8 @@
 }
 
 html, body {
+	background-color: var(--white);
+	color: var(--black);
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;

@@ -21,8 +21,7 @@
     }
 
     div :global(pre) {
-        border-radius: 4px;
-        background-color: #e0e0e0;
+        background-color: var(--secondary);
         border-left: 2px solid var(--primary);
         display: block;
         overflow-x: auto;

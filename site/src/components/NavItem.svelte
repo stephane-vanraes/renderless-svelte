@@ -10,9 +10,9 @@
 <style>
     a,
     span {
-        color: #e0e0e0;
+        color: var(--black);
         display: block;
-        padding: .75rem 1rem 0;
+        padding: .375rem 1rem;
     }
 
     a {
@@ -21,19 +21,20 @@
     a:active,
     a:focus,
     a:hover {
-        color: white;
+        background-color: var(--secondary);
+        color: var(--black);
     }
     a.active {
-        color: white;
         text-decoration: underline;
     }
     span {
         font-weight: 600;
         text-transform: uppercase;
     }
-
-    div {
-        padding-left: 1rem;
+    div > :global(a:before) {
+        content: '~';
+        display: inline-block;
+        margin-right: 1ch;
     }
 </style>
 

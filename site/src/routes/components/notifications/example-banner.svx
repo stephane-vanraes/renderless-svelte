@@ -18,6 +18,7 @@ Clicking any of the animals will trigger the banner, naming the animal clicked a
 <style>
 	span {
 		background: var(--primary);
+        box-shadow: 0 4px 4px rgba(0,0,0,.75);
         color: white;
         position: absolute;
         left: 0;
@@ -53,6 +54,7 @@ Clicking any of the animals will trigger the banner, naming the animal clicked a
 <style>
 	span {
 		background: var(--primary);
+        box-shadow: 0 4px 4px rgba(0,0,0,.75);
         color: white;
         position: absolute;
         left: 0;

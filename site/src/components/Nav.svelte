@@ -11,8 +11,8 @@
 
 <style>
     nav {
-        background-color: var(--secondary);
-        color: white;
+        background-color: var(--primary);
+        border-right: 2px solid var(--black);
         flex: 0 0 20ch;
     }
 
@@ -34,8 +34,8 @@
     button:active,
     button:hover,
     button:focus {
-        background-color: var(--primary);
-        fill: white;
+        background-color: var(--secondary);
+        fill: var(--black);
         outline: none;
     }
 
@@ -44,6 +44,7 @@
             display: block;
         }
         nav {
+            border-right: 0;
             display: none;
             position: absolute;
             height: 100%;
