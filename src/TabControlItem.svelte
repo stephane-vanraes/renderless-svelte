@@ -8,7 +8,7 @@
 	export let id
 	export let payload	
 	
-	const select = () => setTab(payload)
+	const select = () => setTab(id)
 	
 	onMount(() => _tabs.update(t => [...t, {		
 			active,

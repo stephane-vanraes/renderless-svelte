@@ -25,7 +25,7 @@ This is a variant that switches between tabs on the side of the panel or on top 
     }
     button {
         border: 1px solid #c0c0c0;
-        flex: 1 0 13ch;
+        flex: 1 0 15ch;
         padding: .25rem .5rem;
     }
     button.active {
