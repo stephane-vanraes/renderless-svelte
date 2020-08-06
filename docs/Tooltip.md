@@ -33,6 +33,6 @@ The Tooltip component itself can be placed anywhere in your markup, but it is re
 
 ## Examples
 
-* [Plain modal](https://www.renderless-svelte.dev/components/modal/example-plain)
-* [Component based](https://www.renderless-svelte.dev/components/modal/example-component)
-* [Dynamic content](https://www.renderless-svelte.dev/components/modal/example-dynamic)
+* [Plain tooltip](https://www.renderless-svelte.dev/components/tooltip/example-basic)
+* [Component based](https://www.renderless-svelte.dev/components/tooltip/example-component)
+* [With options](https://www.renderless-svelte.dev/components/tooltip/example-options)

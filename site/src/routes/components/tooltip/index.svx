@@ -13,10 +13,9 @@ import { Tooltip, tooltip } from 'renderless-svelte'
 
 ## Examples
 
-* [Plain modal](/components/modal/example-plain)
-* [Component based](/components/modal/example-component)
-* [Dynamic content](/components/modal/example-dynamic)
-
+* [Plain tooltip](/components/tooltip/example-basic)
+* [Component based](/components/tooltip/example-component)
+* [With options](/components/tooltip/example-options)
 
 ## The tooltip action
 
