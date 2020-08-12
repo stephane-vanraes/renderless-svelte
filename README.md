@@ -13,3 +13,5 @@ Renderless components are components that do not render anything by themselves, 
 [Notifications](/docs/Notifications.md)
 
 [TabControl](/docs/TabControl.md)
+
+[Tooltip](/docs/Tooltip.md)
