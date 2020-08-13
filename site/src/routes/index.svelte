@@ -59,6 +59,11 @@
     <span>You can read more about the philosophy of renderless component in the <Link href="/about">About</Link> page.</span>
 </Section>
 
+<Section title="Animations">
+    <span>Animations are left as an exercies to the reader 🎓</span>
+    <span>Renderless Svelte only takes cares of common functionality without any rendering, animations can be considered to be part of the render, and therefore fall outside of the scope of this project.  That said, work has been (and will continue to be done) to create hooks and exposure to facilitate animations.</span>
+</Section>
+
 <Section title="Components">
     <Card>
         <Link href="/components/modal"><h3>Modals</h3></Link>
