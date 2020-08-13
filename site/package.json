@@ -1,7 +1,7 @@
 {
   "name": "renderless-svelte.dev",
   "description": "renderless-svelte.dev",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "dev": "sapper dev --ext \".svelte .svx\"",
     "build": "sapper build --legacy --ext \".svelte .svx\"",
