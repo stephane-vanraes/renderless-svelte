@@ -3,6 +3,8 @@ slug: components/modal/example-component
 title: A plain Modal
 ---
 
+<Link href="/components/modal">Back to Modal</Link>
+
 # Plain Modal
 
 This example is very straightforward. When clicking one of the animals, a modal will show with the icon of that animals times the number clicked.  There is no close button, clicking on the backdrop will close the modal instead.
@@ -11,6 +13,7 @@ It links the `close` action to the backdrop to get the desired behaviour.
 
 <script>
     import Modal from '../../../../../src/Modal.svelte'
+    import Link from '../../../components/Link.svelte'
     import ActionButton from './_ActionButton.svelte'
 </script>
 

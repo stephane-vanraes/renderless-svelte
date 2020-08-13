@@ -3,11 +3,14 @@ slug: components/tabcontrol/example-responsive
 title: A responsive TabControl
 ---
 
+<Link href="/components/tabcontrol">TabControl</Link>
+
 # Responsive TabControl
 
 This is a variant that switches between tabs on the side of the panel or on top based on the available space.
 
 <script>
+    import Link from '../../../components/Link.svelte'
     import { TabControl, TabControlItem } from '../../../../../src/index.js'
 </script>
 

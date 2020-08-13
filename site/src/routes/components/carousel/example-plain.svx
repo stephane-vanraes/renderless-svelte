@@ -3,12 +3,15 @@ slug: components/carousel/example-index
 title: A plain Carousel example
 ---
 
+<Link href="/components/carousel">Back to Carousel</Link>
+
 # A Plain Carousel
 
 This is the most basic carousel, a simple block with a previous and next button
 
 <script>
     import Carousel from '../../../../../src/Carousel.svelte'
+    import Link from '../../../components/Link.svelte'
     const items = ["Squirrel 🐿️", "Rabbit 🐇", "Hamster 🐹"]
 </script>
 

@@ -1,12 +1,11 @@
 :root {
-	--primary-dark: #2c6e49;
-	--primary: #4c956c;
-	--secondary: #ffc9b9;
-	--accent: #d68c45;
-	--black: #040404;
-	--white: #fcfcfc;
+	--darkblue: rgb(15, 54, 87);
+	--orange: rgb(185, 112, 69);
+	--orange-light: rgb(225, 152, 109);
+	--grey: rgb(128, 128, 128);
+	--grey-dark: rgb(100, 100, 100); 
+	--grey-light: rgb(200, 200, 200);
 }
-
 * {
 	box-sizing: border-box;
 	color: inherit;
@@ -15,12 +14,7 @@
 	padding: 0;
 }
 
-html, body {
-	min-height: 100vh;
-	overflow-x: hidden;
-}
-
-body {
-	background-color: #4C956C;
-	color: var(--white);
+.stack > * + * {
+	display: block;
+	margin-top: 1rem;
 }

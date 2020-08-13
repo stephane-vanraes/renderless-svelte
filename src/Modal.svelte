@@ -9,11 +9,11 @@
         _payload.set(payload)
     }
 
-    export const close = () => _open.set(false)
+    export const closeModal = () => _open.set(false)
 </script>
 
 <script></script>
 
 {#if $_open}
-    <slot payload={$_payload} {close}></slot>
+    <slot payload={$_payload} close={closeModal}></slot>
 {/if}

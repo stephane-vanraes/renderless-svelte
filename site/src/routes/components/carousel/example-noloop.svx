@@ -3,12 +3,15 @@ slug: components/carousel/example-noloop
 title: A Carousel without looping
 ---
 
+<Link href="/components/carousel">Back to Carousel</Link>
+
 # A Carousel without looping
 
 This is a minor extension to the plain carousel, here the `currentIndex` is used to enable and disable the buttons when the edges of the array have been reached.
 
 <script>
     import Carousel from '../../../../../src/Carousel.svelte'
+    import Link from '../../../components/Link.svelte'
     const items = ["Squirrel 🐿️", "Rabbit 🐇", "Hamster 🐹"]
 </script>
 

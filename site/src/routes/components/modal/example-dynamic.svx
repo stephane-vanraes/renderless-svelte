@@ -3,12 +3,15 @@ slug: components/modal/example-component
 title: A Modal with dynamic content
 ---
 
+<Link href="/components/modal">Back to Modal</Link>
+
 # Modal with dynamic content
 
 In this more advanced use case, the payload also includes a rendering instruction in the form of which _component_ to use to render it.  Using [svelte:component](https://svelte.dev/docs#svelte_component) we can have the Modal switch between components.
 
 <script>
     import Modal from '../../../../../src/Modal.svelte'
+    import Link from '../../../components/Link.svelte'
     import ActionButton from './_ActionButton.svelte'
     import Information from './_Information.svelte'
     import Details from './_Details.svelte'

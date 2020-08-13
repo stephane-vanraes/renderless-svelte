@@ -3,12 +3,15 @@ slug: components/carousel/example-index
 title: A Carousel with rapid access index
 ---
 
+<Link href="/components/carousel">Back to Carousel</Link>
+
 # A Carousel with index
 
 In this carousel there is in addition to the next and previous buttons also a rapid access index provided.
 
 <script>
     import Carousel from '../../../../../src/Carousel.svelte'
+    import Link from '../../../components/Link.svelte'
     const items = ["Squirrel 🐿️", "Rabbit 🐇", "Hamster 🐹"]
 </script>
 

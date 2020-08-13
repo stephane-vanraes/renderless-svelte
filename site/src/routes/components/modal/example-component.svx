@@ -3,12 +3,15 @@ slug: components/modal/example-component
 title: A Modal with a component
 ---
 
+<Link href="/components/modal">Back to Modal</Link>
+
 # Modal with a component
 
 In this example, the payload from the Modal is passed into another component, this is done to make the markup slightly more clutter-free and is a good stepping point to more dynamic content see [Dynamic Content](/components/modal/example-dynamic)
 
 <script>
     import Modal from '../../../../../src/Modal.svelte'
+    import Link from '../../../components/Link.svelte'
     import ActionButton from './_ActionButton.svelte'
     import Information from './_Information.svelte'
 </script>

@@ -3,12 +3,15 @@ slug: components/tooltip/example-basic
 title: A basic Tooltip
 ---
 
+<Link href="/components/tooltip">Tooltip</Link>
+
 # Basic Tooltip
 
 A very simple way and common way to have a tooltip is to use CSS to show it above the element in question, with a little arrow pointing at the element itself.
 
 <script>
     import { tooltip, Tooltip } from '../../../../../src/index.js'
+    import Link from '../../../components/Link.svelte'
 </script>
 
 <style>

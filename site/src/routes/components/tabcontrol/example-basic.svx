@@ -3,6 +3,8 @@ slug: components/tabcontrol/example-basic
 title: A basic TabControl
 ---
 
+<Link href="/components/tabcontrol">TabControl</Link>
+
 # Basic TabControl
 
 This is probably the most straightforward TabControl there is.  Here we have three simply tabs, the header is automatically filled with the payload for each tab.
@@ -10,6 +12,7 @@ This is probably the most straightforward TabControl there is.  Here we have thr
 Note that we have wrapped all _TabControlItem_s together into the div with class 'tab' instead of the content of each TabControlItem individually.  Thanks to the use of slots only the active one will be rendered anyway.
 
 <script>
+    import Link from '../../../components/Link.svelte'
     import { TabControl, TabControlItem } from '../../../../../src/index.js'
 </script>
 

@@ -3,6 +3,8 @@ slug: components/tabcontrol/example-component
 title: A TabControl with a Component
 ---
 
+<Link href="/components/tabcontrol">TabControl</Link>
+
 # TabControl with a Component
 
 In this example we can see that it's easy to define a component for the actual content of the tab.
@@ -10,6 +12,7 @@ In this example we can see that it's easy to define a component for the actual c
 Note that in this case it is always the same content, but this does not have to be so.
 
 <script>
+    import Link from '../../../components/Link.svelte'
     import { TabControl, TabControlItem } from '../../../../../src/index.js'
     import Information from './_Information.svelte'
 </script>

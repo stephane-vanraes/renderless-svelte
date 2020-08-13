@@ -3,6 +3,8 @@ slug: components/tooltip/example-components
 title: A dynamic Tooltip
 ---
 
+<Link href="/components/tooltip">Tooltip</Link>
+
 # A dynamic Tooltip
 
 Here we pass a component in with the action, through the use of `<svelte:component>` we can then have a completely different rendering based on the options passed in from the action, allowing for great flexibility.
@@ -10,6 +12,7 @@ Here we pass a component in with the action, through the use of `<svelte:compone
 <script>
     import { tooltip, Tooltip } from '../../../../../src/index.js'
 	import Component1 from './_Component1.svelte'
+    import Link from '../../../components/Link.svelte'
 	import Component2 from './_Component2.svelte'
 </script>
 

@@ -3,6 +3,8 @@ slug: components/notifications/example-popup
 title: A Popup Notification
 ---
 
+<Link href="/components/notifications">Notifications</Link>
+
 # Popup Notification
 
 This is a very basic implementation of a pop-up notification.
@@ -11,6 +13,7 @@ Clicking any of the animals will trigger a popup, naming the animal clicked and 
 
 <script>
 	import { fly } from 'svelte/transition' 
+    import Link from '../../../components/Link.svelte'
 	import ActionButton from './_ActionButton.svelte'	
 	import Notification from '../../../../../src/Notifications.svelte'
 </script>

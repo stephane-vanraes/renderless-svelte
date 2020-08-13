@@ -8,7 +8,17 @@
 		
 		const mouseover = () => {
 			options.set(_opts)
-			dimensions.set(node.getBoundingClientRect())
+			let dim = node.getBoundingClientRect()
+			dimensions.set({
+				x: dim.x + window.scrollX,
+				y: dim.y + window.scrollY,
+				width: dim.width,
+				height: dim.height,
+				bottom: dim.bottom + window.scrollY,
+				left: dim.bottom + window.scrollX,
+				right: dim.right + window.scrollX,
+				top: dim.top + window.scrollX,
+			})
 		}
 		const mouseout = () => {
 			options.set(false)

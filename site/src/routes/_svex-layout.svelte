@@ -6,7 +6,7 @@
 <style>
     div {        
         display: block;
-        padding: .75rem 2rem .75rem 1rem;
+        padding: 0 2rem .75rem 1rem;
         position: relative;
         width: 100%;
     }
@@ -21,9 +21,9 @@
     }
 
     div :global(pre) {
-        background-color: var(--white);
+        background-color: var(--grey-light);
         border: 0;
-        border-left: 2px solid var(--accent);
+        border-left: 2px solid var(--orange);
         display: block;
         overflow-x: auto;
         padding-top: .5rem;

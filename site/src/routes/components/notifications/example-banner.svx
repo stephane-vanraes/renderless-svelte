@@ -3,6 +3,8 @@ slug: components/notifications/example-banner
 title: A Banner Notification
 ---
 
+<Link href="/components/notifications">Notifications</Link>
+
 # Banner Notification
 
 In this example the notifactions are rendered as a banner on top of this section of the page.
@@ -12,6 +14,7 @@ Clicking any of the animals will trigger the banner, naming the animal clicked a
 <script>
 	import { fade } from 'svelte/transition' 
 	import ActionButton from './_ActionButton.svelte'	
+    import Link from '../../../components/Link.svelte'
 	import Notification from '../../../../../src/Notifications.svelte'
 </script>
 
