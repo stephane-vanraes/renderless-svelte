@@ -1,6 +1,6 @@
 {
   "name": "renderless-svelte",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A collection of renderless Svelte components",
   "homepage": "https://www.renderless-svelte.dev",
   "repository": {
