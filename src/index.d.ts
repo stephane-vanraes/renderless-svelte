@@ -116,10 +116,16 @@ export declare function tooltip<U extends any[], El extends any>(node: El, ...ar
     update?: (...args: U) => void,
     destroy?: () => void
 } | void;
+
+interface Dimensions {
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+    bottom: number;
+    left: number;
+    right: number;
+    top: number;
+}
 export declare class Tooltip extends Svelte2TsxComponent
-    <{}, {}, {
-        dimensions: {
-            x: number,
-            y: number,
-        }, options: any
-    }> { }
+    <{}, {}, { dimensions: Dimensions, options: any }> { }
