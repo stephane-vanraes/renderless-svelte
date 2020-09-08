@@ -91,7 +91,7 @@ export declare class Modal extends Svelte2TsxComponent
 
 // Notifications.svelte
 
-export interface notifications {
+export declare let notifications: {
     pop: () => void;
     push: (val: any) => void;
     subscribe: any;
