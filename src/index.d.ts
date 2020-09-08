@@ -96,7 +96,7 @@ export declare let notifications: {
     push: (val: any) => void;
     subscribe: any;
 }
-export declare class Notifications extends Svelte2TsxComponent
+export declare class Notification extends Svelte2TsxComponent
     <{ duration: number }, { notify: any }, { payload: any }> { }
 
 
