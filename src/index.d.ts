@@ -97,7 +97,7 @@ export declare let notifications: {
     subscribe: any;
 }
 export declare class Notifications extends Svelte2TsxComponent
-    <{ duration: number }, {}, { payload: any }> { }
+    <{ duration: number }, { notify: any }, { payload: any }> { }
 
 
 // TabControl.svelte
