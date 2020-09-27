@@ -1,3 +1,8 @@
+<script>
+    import Example1 from './Example1.svelte'
+    import Example2 from './Example2.svelte'
+</script>
+
 ## Carousel
 
 This component takes a list of items and index and will return the current index.  It exposes functions to go the next or previous item as well as way to _jump_ to a specified index.
@@ -14,6 +19,8 @@ This component takes a list of items and index and will return the current index
 
 For brevity, the example code excludes styling, which is of course always done on the consumer side.
 
+<Example1 />
+
 ```svelte
 <script>
     import { Carousel } from 'renderless-svelte'
@@ -26,6 +33,9 @@ For brevity, the example code excludes styling, which is of course always done o
     <button type="button" on:click={controls.next}>Next</button>
 </Carousel>
 ```
+<hr />
+
+<Example2 />
 
 ```svelte
 <script>

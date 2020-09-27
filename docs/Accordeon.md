@@ -1,0 +1,69 @@
+## Accordeon
+
+The accordeon is a component build out of two parts: a clickable element and a content box that shows up when said button is clicked. The clickable element should be mounted in a slot named _header_ and has the following fields:
+
+| Property | Description |
+| -------- | ------------ |
+| toggle | A function to toggle the accordeon |
+| isOpen | A flag indicating the current state |
+
+## AccordeonGroup
+
+If you group accordeons together in one _AccordeonGroup_ this will automatically ensure that only one element can be open at all times. To use it simply add Accordeons to the group:
+
+```svelte
+<script>
+    import { Accordeon, AccordeonGroup } from '../../../../../src/index'
+</script>
+
+<AccordeonGroup>
+    <Accordeon></Accordeon>
+    <Accordeon></Accordeon>
+    <Accordeon></Accordeon>
+    <Accordeon></Accordeon>
+</AccordeonGroup>
+```
+
+AccordeonGroup has no properties or events itself, it is just a wrapper with some nice functionality.
+
+## Examples
+
+```svelte
+<script>
+    import { Accordeon } from '../../../../../src/index'
+</script>
+
+<Accordeon>
+    <button slot="header" let:toggle on:click={toggle}>Squirrel 🐿️</button>
+    <div>
+        This is a text about Squirrels 🐿️
+    </div>
+</Accordeon>
+```
+
+```svelte
+<script>
+    import { Accordeon, AccordeonGroup } from '../../../../../src/index'
+</script>
+
+<AccordeonGroup>
+    <Accordeon>
+        <button slot="header" let:toggle on:click={toggle}>Squirrel 🐿️</button>
+        <div>
+            This is a text about Squirrels 🐿️
+        </div>
+    </Accordeon>
+    <Accordeon>
+        <button slot="header" let:toggle on:click={toggle}>Rabbit 🐇</button>
+        <div>
+            This is a text about Rabbits 🐇
+        </div>
+    </Accordeon>
+    <Accordeon>
+        <button slot="header" let:toggle on:click={toggle}>Hamster 🐹</button>
+        <div>
+            This is a text about Hamsters 🐹
+        </div>
+    </Accordeon>
+</AccordeonGroup>
+````

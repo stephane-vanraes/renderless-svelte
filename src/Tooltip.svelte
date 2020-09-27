@@ -2,16 +2,40 @@
 	import { writable } from 'svelte/store'
 	let options = writable(false)
 	let dimensions = writable({})
-	
+
 	export const tooltip = (node, opts) => {
 		let _opts = opts
-		
+
 		const mouseover = () => {
+			document.addEventListener('scroll', scroll)
+
 			options.set(_opts)
 			let dim = node.getBoundingClientRect()
+
 			dimensions.set({
-				x: dim.x + window.scrollX,
-				y: dim.y + window.scrollY,
+				x: dim.x,
+				y: dim.y,
+				width: dim.width,
+				height: dim.height,
+				bottom: dim.bottom,
+				left: dim.bottom,
+				right: dim.right,
+				top: dim.top,
+			})
+		}
+
+		const mouseout = () => {
+			document.addEventListener('scroll', scroll)
+
+			options.set(false)
+		}
+
+		const scroll = (ev) => {
+			let dim = node.getBoundingClientRect()
+
+			dimensions.set({
+				x: dim.x,
+				y: dim.y,
 				width: dim.width,
 				height: dim.height,
 				bottom: dim.bottom + window.scrollY,
@@ -20,13 +44,10 @@
 				top: dim.top + window.scrollX,
 			})
 		}
-		const mouseout = () => {
-			options.set(false)
-		}
-		
-		node.addEventListener('mouseover', mouseover)		
+
+		node.addEventListener('mouseover', mouseover)
 		node.addEventListener('mouseout', mouseout)
-		
+
 		return {
 			destroy() {
 				node.removeEventListener('mouseover', mouseover)

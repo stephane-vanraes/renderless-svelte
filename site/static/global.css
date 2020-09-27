@@ -1,20 +1,43 @@
 :root {
-	--darkblue: rgb(15, 54, 87);
-	--orange: rgb(185, 112, 69);
-	--orange-light: rgb(225, 152, 109);
-	--grey: rgb(128, 128, 128);
-	--grey-dark: rgb(100, 100, 100); 
-	--grey-light: rgb(200, 200, 200);
+	--background: #B5F8FE;
+	--accent-1: #FBD87F;
+	--accent-2: #F75590;
+	--accent-3: #FCE4D8;
 }
+
 * {
 	box-sizing: border-box;
 	color: inherit;
-	font-family: 'Fira Code', monospace;
+	font-family: inherit;
+	font-weight: inherit;
 	margin: 0;
 	padding: 0;
 }
 
+html,
+body {
+	font-family: Helvetica, sans-serif;
+	height: 100vh;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	overflow-y: scroll;
+}
+
+body > div {
+	padding: 1rem;
+}
+button:not(:disabled) {
+	cursor: pointer;
+}
+button:active,
+button:hover,
+button:focus {
+	outline: none;
+}
+
 .stack > * + * {
-	display: block;
 	margin-top: 1rem;
 }

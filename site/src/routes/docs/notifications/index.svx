@@ -1,3 +1,7 @@
+<script>
+    import Example1 from './Example1.svelte'
+</script>
+
 ## Notifications
 
 This is a straightforward Notification component consisting of two parts:
@@ -41,6 +45,8 @@ This component reacts to elements being added a queue and can be initialized wit
 ```
 
 ## Example
+
+<Example1 />
 
 ```svelte
 <script>

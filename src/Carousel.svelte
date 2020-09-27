@@ -1,6 +1,7 @@
 <script> 
 	export let items = []
 	export let currentIndex = 0
+	export let keyed = false
 	export let loop = false
 	export const setIndex = val => val < items.length && (currentIndex = val)
 	export const controls = {

@@ -1,3 +1,7 @@
+<script>
+    import Example1 from './Example1.svelte'
+</script>
+
 ## TabControl
 
 This component offers an easy way to create tab controls.  It consists of two parts: the TabControl itself and TabControlItems.
@@ -47,6 +51,8 @@ This component creates an item in the TabControl, it will simply wrap a slot tha
 | disabled | flag indicating the tab is disabled |
 
 ## Examples
+
+<Example1 />
 
 ```svelte
 <script>

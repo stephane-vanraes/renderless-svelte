@@ -6,6 +6,8 @@ Renderless components are components that do not render anything by themselves, 
 
 ## Components
 
+[Accordeon](/docs/Accordeon.md)
+
 [Carousel](/docs/Carousel.md)
 
 [Modal](/docs/Modal.md)

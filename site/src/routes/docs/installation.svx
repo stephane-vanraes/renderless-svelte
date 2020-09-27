@@ -1,0 +1,23 @@
+## Installation
+
+The library is available as an npm package:
+
+```sh
+npm i -D renderless-svelte
+```
+
+```sh
+yarn add --dev renderless-svelte
+```
+
+## Usage
+
+All components are exported together, so either use namespacing or destructuring to use them
+
+```js
+import * as RenderLess from 'renderless-svelte';
+```
+
+```js
+import { Accordeon } from 'renderless-svelte';
+```

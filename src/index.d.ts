@@ -61,6 +61,13 @@ declare class Svelte2TsxComponent<
     $inject_state(): void;
 }
 
+// Accordeon.svelte
+
+export declare class Accordeon extends Svelte2TsxComponent
+    <{}, {
+        isOpen: boolean,
+        toggle: () => void,
+    }>{}
 
 // Carousel.svelte
 
