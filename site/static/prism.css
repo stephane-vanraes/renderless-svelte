@@ -8,6 +8,10 @@ pre {
     width: 100%;
 }
 
+code {
+    background-color: var(--accent-1);
+}
+
 .token.keyword { color:  #0F3BFF;}
 .token.operator { color: #782726; }
 .token.string { color: #AF2628; }

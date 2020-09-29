@@ -1,4 +1,5 @@
 <script>
+    import Note from '../../../components/Note.svelte'
     import Example1 from './Example1.svelte'
 </script>
 
@@ -10,13 +11,27 @@ In order to work the Modal has to be defined in the markup somewhere, this can b
 
 ## openModal()
 
-The `open` function, exposed from the Modal takes as an argument a payload, it is this payload that will be send on to the Modal itself.
+The `openModal` function, exposed from the Modal takes as an argument a payload, it is this payload that will be send on to the Modal itself.
 
 ```js
 import { openModal } from 'renderless-svelte'
 
 openModal({ ... })
 ```
+
+## closeModal()
+
+The `closeModal` function will, when executed, close the modal.  This can be used in combination with `svelte:window` to bind a key to close the modals.
+
+```svelte
+<script>
+    import { closeModal } from 'renderless-velte'
+</script>
+
+<svelte:window on:keyup={ev => ev.key === 'Escape' && closeModal()}></svelte:window>
+```
+
+<Note>svelte:window has to always been on the top level of your markup</Note>
 
 ## Modal
 
