@@ -9,7 +9,7 @@ This component offers an easy way to create tab controls.  It consists of two pa
 
 ## The TabControl
 
-The TabControl is the container for the TabControlItem and exposes a slot named 'tabs' that can be used to render the actual controls themselves. The _tabs_ header comes with an exported property 'tabs' that has the details for each tab.  The tabs are identified by a property _id_ that has to be unique.
+The TabControl is the container for the TabControlItem and exposes a slot named 'tabs' that can be used to render the actual controls themselves. The _tabs_ header comes with an exported property 'tabs' that has the details for each tab.  The tabs are identified by a property _id_ that has to be unique.  There is also an exported function _setTab_ that allows for programmatically changing the tab by passing it's _id_.
 
 **This uniqueness is not tested by the control and should be ensured by the user**
 

@@ -5,7 +5,7 @@
 	export let tabs
 	
 	const _tabs = writable([])
-	const setTab = id => _tabs.update(arr => arr.map(t => ({ ...t, active: t.id == id })))
+	export const setTab = id => _tabs.update(arr => arr.map(t => ({ ...t, active: t.id == id })))
 	
 	_tabs.subscribe(t => tabs = t)
 	
