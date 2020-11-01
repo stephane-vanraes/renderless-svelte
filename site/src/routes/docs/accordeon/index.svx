@@ -1,6 +1,5 @@
 <script>
-    import Example1 from './Example1.svelte'
-    import Example2 from './Example2.svelte'
+    import ReplLoader from '../../../components/Repl/Loader.svelte'
 </script>
 
 ## Accordeon
@@ -31,51 +30,6 @@ If you group accordeons together in one _AccordeonGroup_ this will automatically
 
 AccordeonGroup has no properties or events itself, it is just a wrapper with some nice functionality.
 
+## Try it for yourself
 
-## Examples
-
-<Example1 />
-
-```svelte
-<script>
-    import { Accordeon } from 'renderless-svelte'
-</script>
-
-<Accordeon>
-    <button slot="header" let:toggle on:click={toggle}>Squirrel 🐿️</button>
-    <div>
-        This is a text about Squirrels 🐿️
-    </div>
-</Accordeon>
-```
-
-<hr style="margin-bottom: 1rem"/>
-
-<Example2 />
-
-```svelte
-<script>
-    import { Accordeon, AccordeonGroup } from '../../../../../src/index'
-</script>
-
-<AccordeonGroup>
-    <Accordeon>
-        <button slot="header" let:toggle on:click={toggle}>Squirrel 🐿️</button>
-        <div>
-            This is a text about Squirrels 🐿️
-        </div>
-    </Accordeon>
-    <Accordeon>
-        <button slot="header" let:toggle on:click={toggle}>Rabbit 🐇</button>
-        <div>
-            This is a text about Rabbits 🐇
-        </div>
-    </Accordeon>
-    <Accordeon>
-        <button slot="header" let:toggle on:click={toggle}>Hamster 🐹</button>
-        <div>
-            This is a text about Hamsters 🐹
-        </div>
-    </Accordeon>
-</AccordeonGroup>
-````
+<ReplLoader path="docs/accordeon/Example1" />
