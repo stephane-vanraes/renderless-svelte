@@ -22,19 +22,8 @@
 		})
 		components = components
 	})
-
 </script>
 
-<div class="controls">
-	<label>
-		<input type="checkbox" bind:checked={showInput}>
-		<span>Code</span>
-	</label>
-	<label>
-		<input type="checkbox" bind:checked={showOutput}>
-		<span>Result</span>
-	</label>
-</div>
 <div class="wrapper">
 	{#if showInput}
 		<div class="input">
@@ -59,11 +48,7 @@
 	{/if}
 </div>
 
-<style>
-	.controls {
-
-	}
-	
+<style>	
 	.wrapper {
 		display: flex;
 		flex-direction: row;

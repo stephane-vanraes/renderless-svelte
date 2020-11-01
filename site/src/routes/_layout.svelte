@@ -8,6 +8,7 @@
     <li><a href='/' class:active={$page.path === '/'}><h1>Renderless Svelte</h1></a></li>
     <li><a href='/docs' class:active={$page.path.startsWith('/docs')}>Docs</a></li>
     <li><a href='/recipes' class:active={$page.path.startsWith('/recipes')}>Recipes</a></li>
+    <li><a href='/repl' class:active={$page.path.startsWith('/repl')}>Repl</a></li>
     <li><a href='https://github.com/stephane-vanraes/renderless-svelte' target='_blank'>Github</a></li>
 </nav>
 
