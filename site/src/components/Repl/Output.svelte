@@ -44,8 +44,13 @@
 
 </script>
 
-<section>
-    <iframe bind:this={iframe} title="Rendered Repl" {srcdoc}>
+<iframe bind:this={iframe} title="Rendered Repl" {srcdoc} />
 
-    </iframe>
-</section>
+<style>
+    iframe {
+        border: 2px solid black;
+        box-shadow: 0px 2px 4px rgba(0,0,0,.75);
+        height: 100%;
+        width: 100%;
+    }
+</style>

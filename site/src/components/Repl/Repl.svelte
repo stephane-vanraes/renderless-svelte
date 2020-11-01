@@ -26,7 +26,7 @@
 <div class="wrapper">
 	<div class="input">
 		<TabControl>			
-			<div slot="tabs" let:tabs>        
+			<div class="tabs" slot="tabs" let:tabs>        
 				{#each tabs as { active, payload, select }}
 					<button class:active on:click="{select}">{payload}</button>
 				{/each}
@@ -42,3 +42,34 @@
 		<Output {compiled} />
 	</div>
 </div>
+
+<style>
+	.wrapper {
+		display: flex;
+		flex-direction: row;
+		gap: .5rem;
+		height: 100%;
+	}
+	.input {
+		display: flex;
+		flex: 1 0;
+		flex-direction: column;
+	}
+	.output {
+		flex: 1 0;
+		padding-top: 1.75rem;
+	}
+	.tabs {
+		display: flex;
+		flex-wrap: nowrap;
+		margin-bottom: .25rem;
+	}
+	button {
+		background: transparent;
+		border: 1px solid var(--accent-2);
+		padding: .25rem .5rem;
+	}
+	button.active {
+		background:  var(--accent-2);
+	}
+</style>
