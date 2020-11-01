@@ -5,6 +5,8 @@
 	import { TabControl, TabControlItem } from 'renderless-svelte'
 
 	export let components = []
+	export let showInput = true
+	export let showOutput = true
 
 	let compiled
 	let worker
@@ -23,27 +25,45 @@
 
 </script>
 
+<div class="controls">
+	<label>
+		<input type="checkbox" bind:checked={showInput}>
+		<span>Code</span>
+	</label>
+	<label>
+		<input type="checkbox" bind:checked={showOutput}>
+		<span>Result</span>
+	</label>
+</div>
 <div class="wrapper">
-	<div class="input">
-		<TabControl>			
-			<div class="tabs" slot="tabs" let:tabs>        
-				{#each tabs as { active, payload, select }}
-					<button class:active on:click="{select}">{payload}</button>
+	{#if showInput}
+		<div class="input">
+			<TabControl>			
+				<div class="tabs" slot="tabs" let:tabs>        
+					{#each tabs as { active, payload, select }}
+						<button class:active on:click="{select}">{payload}</button>
+					{/each}
+				</div>
+				{#each components as component, id}			
+					<TabControlItem {id} payload={`${component.name}.${component.type}`} active={id === 0}>
+						<Input bind:component />
+					</TabControlItem>
 				{/each}
-			</div>
-			{#each components as component, id}			
-				<TabControlItem {id} payload={`${component.name}.${component.type}`} active={id === 0}>
-					<Input bind:component />
-				</TabControlItem>
-			{/each}
-		</TabControl>
-	</div>
-	<div class="output">
-		<Output {compiled} />
-	</div>
+			</TabControl>
+		</div>
+	{/if}
+	{#if showOutput}
+		<div class="output">
+			<Output {compiled} />
+		</div>
+	{/if}
 </div>
 
 <style>
+	.controls {
+
+	}
+	
 	.wrapper {
 		display: flex;
 		flex-direction: row;
