@@ -5,7 +5,6 @@ export async function get(req, res, next) {
     const { slug } = req.params;
     const dir = `src/samples/${slug.join('/')}`
 
-
     const files = (await fs.readdir(dir)).filter(file => !file.endsWith('svx'))
 
     const promises = files.map(async (file, id) => {

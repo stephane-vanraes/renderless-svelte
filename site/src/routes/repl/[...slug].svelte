@@ -1,8 +1,9 @@
 <script context="module">
-    export async function preload() {
-        const result = await this.fetch(`/repl/introduction.json`)
-        const json = await result.json()
+    export async function preload({ params }) {
+        const { slug } = params
         
+        const result = await this.fetch(`/repl/${slug.join('/')}.json`)
+        const json = await result.json()
         return json
     }
 </script>
@@ -17,4 +18,4 @@
     const showOutput = getContext('showOutput')
 </script>
 
-<Repl {components} showInput={$showInput} showOutput={$showOutput}/>
+<Repl {components} {showInput} {showOutput}/>
