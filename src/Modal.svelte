@@ -1,15 +1,23 @@
 <script context="module">
-    import { writable } from 'svelte/store'
+    import { get, writable } from 'svelte/store'
 
     let _open = writable(false)
     let _payload = writable({})
 
+    let _closePromise
+
     export const openModal = payload => {
         _open.set(true)
         _payload.set(payload)
+        return new Promise(resolve => { _closePromise = resolve })
     }
 
-    export const closeModal = () => _open.set(false)
+    export const closeModal = () => {
+        _open.set(false)
+        if (typeof _closePromise === 'function') {
+            _closePromise(get(_payload))
+        }
+    }
 </script>
 
 <script></script>
