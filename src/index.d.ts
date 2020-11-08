@@ -90,7 +90,7 @@ export declare class Carousel extends Svelte2TsxComponent
 
 // Modal.svelte
 
-export declare function openModal(payload: any): void;
+export declare function openModal(payload: any): Promise<any>;
 export declare function closeModal(): void;
 export declare class Modal extends Svelte2TsxComponent
     <{}, {}, { payload: any, closeModal: typeof closeModal }> { }
