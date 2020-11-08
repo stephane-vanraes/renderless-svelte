@@ -6,12 +6,16 @@ In order to work the Modal has to be defined in the markup somewhere, this can b
 
 ## openModal()
 
-The `open` function, exposed from the Modal takes as an argument a payload, it is this payload that will be send on to the Modal itself.
+The `openModal` function, exposed from the Modal takes as an argument a payload, it is this payload that will be send on to the Modal itself.
+
+The function return a Promise that will be resolved when modal is closed.
 
 ```js
 import { openModal } from 'renderless-svelte'
 
 openModal({ ... })
+
+openModal({ ... }).then(payload => { ... })
 ```
 
 ## Modal
@@ -21,7 +25,7 @@ The Modal component takes a slot that will be shown if a payload has been send t
 | Property | Description |
 | -------- | ------------ |
 | payload | the content to be shown |
-| close | a function to clsoe the modal |
+| close | a function to close the modal |
 
 ## Examples
 
@@ -33,6 +37,26 @@ For brevity, the example code excludes styling, which is of course always done o
 </script>
 
 <button on:click={() => openModal("Rabbit 🐇")}>Rabbit 🐇</button>
+
+<Modal let:payload let:close>
+    <div class="modal">
+        <button on:click={close}>&times;</button>
+        <span>{payload}</span>
+    </div>
+</Modal>
+```
+
+```svelte
+<script>
+    import { Modal, openModal } from 'renderless-svelte'
+
+    const open = () => {
+        openModal("Rabbit 🐇")
+            .then(payload => openModal("Turtle 🐢 is following " + payload))
+    }
+</script>
+
+<button on:click={open}>Rabbit 🐇</button>
 
 <Modal let:payload let:close>
     <div class="modal">
