@@ -21,7 +21,7 @@ Getting started is easy: just install the package and import the components in y
 ## Components
 
 <ul class="components">
-    <li><a href="./docs/accordeon">Accordeon</a></li>
+    <li><a href="./docs/Accordion">Accordion</a></li>
     <li><a href="./docs/carousel">Carousel</a></li>
     <li><a href="./docs/modal">Modal</a></li>
     <li><a href="./docs/notifications">Notifications</a></li>

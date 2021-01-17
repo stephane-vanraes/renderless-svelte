@@ -19,5 +19,5 @@ import * as RenderLess from 'renderless-svelte';
 ```
 
 ```js
-import { Accordeon } from 'renderless-svelte';
+import { Accordion } from 'renderless-svelte';
 ```

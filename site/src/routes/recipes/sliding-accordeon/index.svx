@@ -1,7 +1,7 @@
 ---
-    title: Sliding Accordeon
-    summary: Make your accordeons slide out!
-    tags: accordeon
+    title: Sliding Accordion
+    summary: Make your Accordions slide out!
+    tags: Accordion
 ---
 
 <script>
@@ -10,7 +10,7 @@
 
 ## Sliding Carousel
 
-To make your accordeons more pleasant to use, it is nice to smoothly _unfold_ them instead of just suddenly appearing. Using Svelte's build in transition methods this can be very easily achieved by simply adding one to the contents itself:
+To make your Accordions more pleasant to use, it is nice to smoothly _unfold_ them instead of just suddenly appearing. Using Svelte's build in transition methods this can be very easily achieved by simply adding one to the contents itself:
 
 ```html
 <div transition:slide></div>
@@ -22,27 +22,27 @@ To make your accordeons more pleasant to use, it is nice to smoothly _unfold_ th
 <script>
     import { slide } from 'svelte/transition'
 
-    import { Accordeon, AccordeonGroup } from 'renderless-svelte'
+    import { Accordion, AccordionGroup } from 'renderless-svelte'
 </script>
 
-<AccordeonGroup>
-    <Accordeon>
+<AccordionGroup>
+    <Accordion>
         <button slot="header" let:toggle on:click={toggle}>Squirrel 🐿️</button>
         <div transition:slide>
             This is a text about Squirrels 🐿️
         </div>
-    </Accordeon>
-    <Accordeon>
+    </Accordion>
+    <Accordion>
         <button slot="header" let:toggle on:click={toggle}>Rabbit 🐇</button>
         <div transition:slide>
             This is a text about Rabbits 🐇
         </div>
-    </Accordeon>
-    <Accordeon>
+    </Accordion>
+    <Accordion>
         <button slot="header" let:toggle on:click={toggle}>Hamster 🐹</button>
         <div transition:slide>
             This is a text about Hamsters 🐹
         </div>
-    </Accordeon>
-</AccordeonGroup>
+    </Accordion>
+</AccordionGroup>
 ```

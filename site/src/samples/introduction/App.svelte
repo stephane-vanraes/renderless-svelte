@@ -1,8 +1,8 @@
 <script>
-    import { Accordeon } from 'renderless-svelte'
+    import { Accordion } from 'renderless-svelte'
 </script>
 
-<Accordeon>
+<Accordion>
     <button slot="header" let:toggle on:click={toggle}>
         Where do we go from here ?
     </button>
@@ -10,4 +10,4 @@
         <p>Renderless Svelte</p>
         <p>In this REPL you can try out some basic stuff, it doesn't work perfectly yet though...</p>
     </div>
-</Accordeon>
+</Accordion>

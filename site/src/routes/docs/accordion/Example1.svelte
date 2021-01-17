@@ -1,13 +1,13 @@
 <script>
-    import { Accordeon } from 'renderless-svelte'
+    import { Accordion } from 'renderless-svelte'
 </script>
 
-<Accordeon>
+<Accordion>
     <button slot="header" let:toggle on:click={toggle}>Squirrel 🐿️</button>
     <div>
         This is a text about Squirrels 🐿️
     </div>
-</Accordeon>
+</Accordion>
 
 <style> 
 	button {

@@ -11,7 +11,7 @@
 <script>
     import { setContext } from 'svelte'
     import { writable } from 'svelte/store'
-    import { Accordeon } from 'renderless-svelte'
+    import { Accordion } from 'renderless-svelte'
     import Checkbox from '../../components/Checkbox.svelte'
     export let paths = []
     
@@ -26,14 +26,14 @@
     <Checkbox label="Code" bind:checked={$showInput} />
     <Checkbox label="Result" bind:checked={$showOutput} />
     <div>
-        <Accordeon let:toggle>
+        <Accordion let:toggle>
             <button slot="header" on:click={toggle}>Try on your own, or choose a preset</button>
             <ul>
                 {#each paths as path}
                     <li><a href={`repl/${path}`}>{path}</a></li>
                 {/each}
             </ul>
-        </Accordeon>
+        </Accordion>
     </div>
 </div>
 

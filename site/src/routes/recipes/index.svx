@@ -8,7 +8,7 @@
 </script>
 
 <script>
-    import { Accordeon, AccordeonGroup } from 'renderless-svelte'
+    import { Accordion, AccordionGroup } from 'renderless-svelte'
     export let recipes = []
 </script>
 

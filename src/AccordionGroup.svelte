@@ -4,7 +4,7 @@
 	
 	let current = writable(false)
 	
-	setContext('accordeon', {
+	setContext('Accordion', {
 		setCurrent: fn => {
 			$current && $current !== fn && $current()
 			current.set(fn)

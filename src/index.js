@@ -1,5 +1,5 @@
-import Accordeon from './Accordeon.svelte'
-import AccordeonGroup from './AccordeonGroup.svelte'
+import Accordion from './Accordion.svelte'
+import AccordionGroup from './AccordionGroup.svelte'
 import Carousel from './Carousel.svelte'
 import Notification, { notifications } from './Notifications.svelte'
 import Modal, { closeModal, openModal } from './Modal.svelte'
@@ -7,9 +7,12 @@ import TabControl from './TabControl.svelte'
 import TabControlItem from './TabControlItem.svelte'
 import Tooltip, { tooltip } from './Tooltip.svelte'
 
-export { 
-    Accordeon,
-    AccordeonGroup,
+const Accordeon = Accordion
+const AccordeonGroup = AccordionGroup
+
+export {
+    Accordion,
+    AccordionGroup,
     Carousel,
     closeModal,
     Modal,
@@ -19,12 +22,16 @@ export {
     TabControl,
     TabControlItem,
     Tooltip,
-    tooltip
+    tooltip,
+    
+    /* Deprecated */
+    Accordeon,
+    AccordeonGroup
 }
 
 export const Renderless = {
-    Accordeon,
-    AccordeonGroup,
+    Accordion,
+    AccordionGroup,
     Carousel,
     closeModal,
     Modal,
@@ -34,5 +41,9 @@ export const Renderless = {
     TabControl,
     TabControlItem,
     Tooltip,
-    tooltip
+    tooltip,
+    
+    /* Deprecated */
+    Accordeon,
+    AccordeonGroup
 }

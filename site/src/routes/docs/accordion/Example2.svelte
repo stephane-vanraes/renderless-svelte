@@ -1,27 +1,27 @@
 <script>
-    import { Accordeon, AccordeonGroup } from 'renderless-svelte'
+    import { Accordion, AccordionGroup } from 'renderless-svelte'
 </script>
 
-<AccordeonGroup>
-    <Accordeon>
+<AccordionGroup>
+    <Accordion>
         <button slot="header" let:toggle on:click={toggle}>Squirrel 🐿️</button>
         <div>
             This is a text about Squirrels 🐿️
         </div>
-    </Accordeon>
-    <Accordeon>
+    </Accordion>
+    <Accordion>
         <button slot="header" let:toggle on:click={toggle}>Rabbit 🐇</button>
         <div>
             This is a text about Rabbits 🐇
         </div>
-    </Accordeon>
-    <Accordeon>
+    </Accordion>
+    <Accordion>
         <button slot="header" let:toggle on:click={toggle}>Hamster 🐹</button>
         <div>
             This is a text about Hamsters 🐹
         </div>
-    </Accordeon>
-</AccordeonGroup>
+    </Accordion>
+</AccordionGroup>
 
 <style> 
 	button {

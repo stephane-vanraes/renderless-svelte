@@ -5,7 +5,7 @@
 	const close = () => isOpen = false
 	const toggle = () => isOpen = !isOpen
     
-    const context = getContext('accordeon')
+    const context = getContext('Accordion')
 	const setCurrent = context && context.setCurrent
 	
 	$: isOpen && setCurrent && setCurrent(close)
