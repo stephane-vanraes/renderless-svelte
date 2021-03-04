@@ -21,7 +21,6 @@
 	div {
 		border: 1px solid #ced4da;
         border-top: 0;
-		display: flex;
         margin-top: 0;
         max-width: 400px;
 		padding: 1rem;

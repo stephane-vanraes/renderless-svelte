@@ -1,6 +1,17 @@
+<script context="module">
+    import load from '../../../utils/loader.js'
+
+    export async function preload({ path }) {
+        return load(path, this.fetch)
+    }
+</script>
+
 <script>
-    import Note from '../../../components/Note.svelte'
+    import Example from '../../../components/Example.svelte'
     import Example1 from './Example1.svelte'
+    import Note from '../../../components/Note.svelte'
+
+    export let examples
 </script>
 
 ## Modal
@@ -40,25 +51,8 @@ The Modal component takes a slot that will be shown if a payload has been send t
 | Property | Description |
 | -------- | ------------ |
 | payload | the content to be shown |
-| close | a function to clsoe the modal |
+| close | a function to close the modal |
 
 ## Examples
 
-For brevity, the example code excludes styling, which is of course always done on the consumer side.
-
-<Example1 />
-
-```svelte
-<script>
-    import { Modal, openModal } from 'renderless-svelte'
-</script>
-
-<button on:click={() => openModal("Rabbit 🐇")}>Rabbit 🐇</button>
-
-<Modal let:payload let:close>
-    <div class="modal">
-        <button on:click={close}>&times;</button>
-        <span>{payload}</span>
-    </div>
-</Modal>
-```
+<Example component={Example1} code={examples.Example1} />

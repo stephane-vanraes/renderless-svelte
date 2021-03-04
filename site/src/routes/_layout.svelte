@@ -1,46 +1,46 @@
 <script>
-    import { stores } from '@sapper/app'
+    import Cube from '../icons/Cube.svelte'
+    import Link from '../components/Link.svelte'
+    import Nav from '../components/Nav.svelte'
 
-    const { page } = stores()
+    export let segment
 </script>
 
-<nav>
-    <li><a href='/' class:active={$page.path === '/'}><h1>Renderless Svelte</h1></a></li>
-    <li><a href='/docs' class:active={$page.path.startsWith('/docs')}>Docs</a></li>
-    <li><a href='/recipes' class:active={$page.path.startsWith('/recipes')}>Recipes</a></li>
-    <li><a href='/repl' class:active={$page.path.startsWith('/repl')}>Repl</a></li>
-    <li><a href='https://github.com/stephane-vanraes/renderless-svelte' target='_blank'>Github</a></li>
-</nav>
+<header>
+    <h1>
+        <Link href="/">
+            <Cube />
+            <span>Renderless Svelte</span>
+        </Link>
+    </h1>
+    <Nav {segment} />
+</header>
 
-<slot></slot>
+<main>
+    <slot />
+</main>
 
 <style>
-    nav {
+    header {
+        align-content: center;
         display: flex;
-        justify-content: center;
-        padding: 1rem;
-        background: var(--background);
-        box-shadow: 0px 2px 4px rgba(0,0,0,.75);
-        margin-bottom: 1rem;
+        flex: 0 0;
+        flex-wrap: wrap;
+        font-weight: 700;
+        gap: 1em;
+        padding: 1em 2em;
     }
-    li {
-        display: inline-block;
-        margin: 0 .5rem;
+
+    header > h1 {
+        flex: 2 0;
+        font-size: 1.5em;
+        white-space: nowrap;
     }
-    a {
-        border-bottom: 2px solid transparent;
-        display: block;
-        font-weight: 600;
-        padding: 0 .25rem;
-        text-decoration: none;
-    }
-    a:active,
-    a:focus,
-    a:hover,
-    a.active {
-        border-bottom-color: currentColor;
-    }
-    h1 {
-        font-size: 1rem;
+
+    main {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        padding: 0 2em 2em;
     }
 </style>

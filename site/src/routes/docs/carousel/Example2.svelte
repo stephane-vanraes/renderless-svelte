@@ -23,25 +23,22 @@
         max-width: 400px;
         width: 100%;
     }
-    div > ul {
+    ul {
         display: flex;
         flex-direction: row;
         justify-content: center;
         list-style-type: none;
     }
     button {
-        border: 1px solid #c0c0c0;
-        flex: 0 0 13ch;
+        border: 1px solid;
+        cursor: pointer;
         margin: .25rem;
         padding: .5rem .5rem;
     }
     button.active {
-        background: #909090;
+        background: #aaa7;
     }
     span {
-        background-color: var(--secondary);
-        border: 1px solid #c0c0c0;
-        flex: 1 0;
         padding: .75rem .5rem;
         text-align: center;
     }

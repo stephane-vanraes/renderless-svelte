@@ -17,9 +17,10 @@
         padding: .75rem .5rem;
     }
     .modal {
-        background-color: var(--background);
+        background-color: black;
         border-radius: .25rem;
         box-shadow: 2px 2px 4px rgba(0,0,0,.75);
+        color: white;
         left: 50%;
         min-height: 250px;
         min-width: 250px;

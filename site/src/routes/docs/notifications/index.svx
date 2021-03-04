@@ -1,5 +1,16 @@
+<script context="module">
+    import load from '../../../utils/loader.js'
+
+    export async function preload({ path }) {
+        return load(path, this.fetch)
+    }
+</script>
+
 <script>
+    import Example from '../../../components/Example.svelte'
     import Example1 from './Example1.svelte'
+
+    export let examples
 </script>
 
 ## Notifications
@@ -46,19 +57,4 @@ This component reacts to elements being added a queue and can be initialized wit
 
 ## Example
 
-<Example1 />
-
-```svelte
-<script>
-    import { Notification, notifications } from 'renderless-svelte'
-</script>
-
-<button on:click={() => notifications.push("Squirrel 🐿️")}>Squirrel 🐿️</button>
-<button on:click={() => notifications.push("Rabbit 🐇")}>Rabbit 🐇</button>
-<button on:click={() => notifications.push("Hamster 🐹")}>Hamster 🐹</button>
-
-<Notification let:payload duration={10000}>
-    <span>{payload}</span>
-</Notification>
-
-```
+<Example component={Example1} code={examples.Example1} />

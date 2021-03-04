@@ -1,30 +1,14 @@
-import fs from 'fs'
-import path from 'path'
-import grayMatter from 'gray-matter'
+const { readdirSync } = require('fs')
 
-function isDir(path) {
-    try {
-        var stat = fs.lstatSync(path)
-        return stat.isDirectory()
-    } catch (e) { return false }
-    // lstatSync throws an error if path doesn't exist
-}
+export async function get(req, res) {
 
-const route = 'src/routes/recipes'
-const recipes = fs.readdirSync(route)
-    .filter(file => isDir(`${route}/${file}`))    
-	.map(file => {
-		const post = fs.readFileSync(path.resolve(route, `${file}/index.svx`), 'utf-8')
-		return {
-            ...grayMatter(post).data,
-            href: `/recipes/${file}`
-        }
-	})
+    const links = readdirSync('./src/routes/recipes', { withFileTypes: true })
+        .filter(f => f.isDirectory())
+        .map(dir => ({
+            title: dir.name.replace(/_/g, ' '),
+            href: `/recipes/${dir.name}`
+        }))
 
-export async function get(req, res) {    
-    res.setHeader('Content-Type', 'application/json');
-    res.statusCode = 200
-    res.end(JSON.stringify({
-        recipes
-    })) 
+	res.setHeader('Content-Type', 'application/json');
+	res.end(JSON.stringify(links));
 }

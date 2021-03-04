@@ -1,0 +1,24 @@
+<script context="module">
+    import load from '../../../utils/loader.js'
+
+    export async function preload({ path }) {
+        return load(path, this.fetch)
+    }
+</script>
+
+<script>
+    import Example from '../../../components/Example.svelte'
+    import Final from './Final.svelte'
+
+    export let examples
+</script>
+
+## Sliding Carousel
+
+To make your Accordions more pleasant to use, it is nice to smoothly _unfold_ them instead of just suddenly appearing. Using Svelte's build in transition methods this can be very easily achieved by simply adding one to the contents itself:
+
+```html
+<div transition:slide></div>
+```
+
+<Example component={Final} code={examples.Final} />

@@ -1,23 +1,26 @@
+<script>
+    import Warning from '../icons/Warning.svelte'
+</script>
+
 <div>
-    <slot></slot>
+    <Warning />
+    <p>
+        <slot />
+    </p>
 </div>
 
 <style>
     div {
-        background-color: var(--accent-2);
-        border-radius: .25rem;
-        box-shadow: 2px 2px 4px rgba(0,0,0,.75);
-        padding: 1rem;
+        align-items: center;
+        background-color: var(--secondary-light);
+        border: 3px solid black;
+        border-radius: 4px;
+        display: flex;
+        gap: 1ch;
+        padding: .5em;
     }
 
-    div > :global(a) {
-        margin: -.25rem;
-        padding: .25rem;
-    }
-
-    div > :global(a:active),
-    div > :global(a:focus),
-    div > :global(a:hover) {
-        background-color: white;
+    div > :global(svg) {
+        font-size: 2em;
     }
 </style>

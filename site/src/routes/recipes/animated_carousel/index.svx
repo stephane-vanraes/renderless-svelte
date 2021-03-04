@@ -1,0 +1,75 @@
+<script context="module">
+    import load from '../../../utils/loader.js'
+
+    export async function preload({ path }) {
+        return load(path, this.fetch)
+    }
+</script>
+
+<script>
+    import Example from '../../../components/Example.svelte'
+    import Default from './Default.svelte'
+    import Final from './Final.svelte'
+
+    export let examples
+</script>
+
+## Animated Carousel
+
+Just using the default Carousel provided by renderless-svelte will give you a 'jumpy' experience. But it is actually fairly easy to make this smoother. To do this we have to use a combination of CSS, transitions and a the *#key*  keyword provided by Svelte.
+
+### The key keyword
+
+Normally Svelte will try to simply update the innerHTML, this can be easily seen in the example below if you inspect the elements and see what happens when you click next or previous: only the image source will change, the actual image tag stays the same.
+
+<Example component={Default} />
+
+Because the tag is still the same _in:xxx_ and _out:xxx_ transitions do not work, those only work when the tag itself is added or removed. This was commonly solved by wrapping the element in an each block with a key to force Svelte to update the entire tag. Thanks to the #key directive we can do this simpler:
+
+```svelte
+    <button type="button" on:click={controls.previous}>Previous</button>
+    <div class="content">
+        {#key payload}
+            <img src={payload} alt="" />
+        {/key}
+    </div>
+    <button type="button" on:click={controls.next}>Next</button>
+```
+
+With this code Svelte will everytime _payload_ changes actually destroy the tag and rebuild it, making it easier to add animations. 
+
+### Making it move left and right.
+
+In order to make the animations go left and right we have to somehow track which direction we are going, a quick helper function comes in play here:
+
+```js
+import { tick } from 'svelte'
+let direction = 1;
+
+const move = async (dir, action) => {
+    direction = dir;
+
+    await tick()
+    action()
+}
+```
+
+We await the tick here, because _direction_ is used as a modifier for the fly transition later on and we need to ensure the correct value is being used:
+
+```svelte
+{#key payload}
+    <img 
+        in:fly={{ x: direction*100, duration: 1000 }} 
+        out:fly={{ x: direction*(0-100), duration: 1000 }}
+        src={payload}
+        alt="" />
+{/key}
+```
+
+### And finally
+
+<Example component={Final} code={examples.Final}>
+
+In the code below you will see there is some added styling to place the images always on the same place, otherwise Svelte will initially place them next to each other. And of course the buttons have been wired up to the aforementioned method for the direction.
+
+</Example>

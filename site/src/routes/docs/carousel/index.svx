@@ -1,11 +1,23 @@
+<script context="module">
+    import load from '../../../utils/loader.js'
+
+    export async function preload({ path }) {
+        return load(path, this.fetch)
+    }
+</script>
+
 <script>
+    import Example from '../../../components/Example.svelte'
     import Example1 from './Example1.svelte'
     import Example2 from './Example2.svelte'
+
+    export let examples
 </script>
+
 
 ## Carousel
 
-This component takes a list of items and index and will return the current index.  It exposes functions to go the next or previous item as well as way to _jump_ to a specified index.
+This component takes a list of items and index and will return the current index.  It exposes functions to go the next or previous item as well as a way to _jump_ to a specified index.
 
 | Property | Description |
 | -------- | ------------ |
@@ -15,44 +27,10 @@ This component takes a list of items and index and will return the current index
 | setIndex | a function allowing the user to move immediately to a specified index | 
 | controls | an object containing a _next_ and a _previous_ function | 
 
-## Examples
+### Examples
 
-For brevity, the example code excludes styling, which is of course always done on the consumer side.
+<Example component={Example1} code={examples.Example1} />
 
-<Example1 />
-
-```svelte
-<script>
-    import { Carousel } from 'renderless-svelte'
-    const items = ["Squirrel 🐿️", "Rabbit 🐇", "Hamster 🐹"]
-</script>
-
-<Carousel items="{items}" let:payload let:controls>
-    <button type="button" on:click={controls.previous}>Previous</button>
-    <span>{payload}</span>
-    <button type="button" on:click={controls.next}>Next</button>
-</Carousel>
-```
 <hr />
 
-<Example2 />
-
-```svelte
-<script>
-    import { Carousel } from 'renderless-svelte'
-    const items = ["Squirrel 🐿️", "Rabbit 🐇", "Hamster 🐹"]
-</script>
-
-<Carousel items="{items}" let:payload let:setIndex let:currentIndex>
-    <div>
-        <span>{payload}</span>
-        <ul>
-            {#each items as _, i}
-            <li>
-                <button class:active={currentIndex === i} on:click={() => setIndex(i)}>{i}</button>
-            </li>
-            {/each}
-        </ul>
-    </div>
-</Carousel>
-```
+<Example component={Example2} code={examples.Example2} />

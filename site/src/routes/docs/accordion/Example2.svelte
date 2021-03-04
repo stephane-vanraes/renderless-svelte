@@ -33,10 +33,6 @@
 		width: 100%;
 	}
 
-    button:not(:first-of-type) {
-        margin-top: 0;
-    }
-
 	div {
 		border: 1px solid #ced4da;
         border-top: 0;

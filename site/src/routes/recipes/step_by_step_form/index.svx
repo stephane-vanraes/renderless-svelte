@@ -1,0 +1,64 @@
+<script>
+    import Example from '../../../components/Example.svelte'
+    import Step1 from './Step1.svelte'
+    import Step2 from './Step2.svelte'
+    import Step3 from './Step3.svelte'
+</script>
+
+## Step by Step Form
+
+A step by step form is a common pattern to request information from a user in a more organized, leaner way.  It often consists of logical steps of bundled information.  A good example would be the checkout for an online shop, which consists of 4 easy steps:
+
+- Ask for customer's detail (name, email, ...)
+- Get the delivery address.
+- Get the payment details
+- Show a summary.
+
+A tabular control is ideal for this because it gives quick access to go back and forth between the different sections. In it's most basic this would look like this:
+
+<Example component={Step1} />
+
+## Going to the 'next' Step
+
+The disadvantage with that approach is that it doesn't really guide the user, after filling in each field they have to themselves go to the next screen, what is usually done is to have a button on each screen that allows the user to go the 'next' screen or step. To do this we can embed in each screen a button that will tell the TabControl to move to a specific screen, we do this by specifying the id of the step we want to move too.
+
+```html
+<script>
+    let tabcontrol
+</script>
+<TabControl bind:this={tabcontrol}>
+    <TabControlItem id="personal" payload="Personal">
+        ...
+        <button on:click="{() => tabcontrol.set('address')}">Next</button>
+    </TabControlItem>
+    <TabControlItem id="address" payload="Address">
+        ...
+    </TabControlItem>
+</TabControl>
+```
+
+<Example component={Step2} />
+
+## Disabling steps not taken
+
+In most cases, you will want the users to proceed through each step in the given order.  But the above solution allows the user to _skip ahead_ because the tabs are not disabled. This can be easily fixed by keeping track of the tabs and setting a flag for each tab.
+
+```html
+<script>
+    let tabcontrol
+    let canAccess = {
+        address: false
+    }
+</script>
+<TabControl bind:this={tabcontrol}>
+    <TabControlItem id="personal" payload="Personal">
+        ...
+        <button on:click="{() => { tabcontrol.set('address'); canAccess.address = true }}">Next</button>
+    </TabControlItem>
+    <TabControlItem id="address" payload="Address" disabled={!canAccess.address}>
+        ...
+    </TabControlItem>
+</TabControl>
+```
+
+<Example component={Step3} />

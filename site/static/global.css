@@ -1,43 +1,66 @@
 :root {
-	--background: #B5F8FE;
-	--accent-1: #FBD87F;
-	--accent-2: #F75590;
-	--accent-3: #FCE4D8;
+	--grey-dark: #7a918d;
+	--grey: #93b1a7;
+	--primary: #00b300;
+	--primary-dark: #007d00;
+	--primary-light: #bfffbf;
+	--secondary: #b30000;
+	--secondary-dark: #7d0000;
+    --secondary-light: #ffbfbf;
+	--black: #111;
+	--white: #eee;
 }
 
-* {
-	box-sizing: border-box;
-	color: inherit;
-	font-family: inherit;
+*, 
+*:after, 
+*:before {
+    box-sizing: border-box;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
 	font-weight: inherit;
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
 }
 
-html,
+*:active,
+*:focus,
+*:hover {
+    outline: none;
+}
+
 body {
-	font-family: Helvetica, sans-serif;
-	height: 100vh;
+	background-color: var(--white);
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+    font-family: "Raleway", sans-serif;
+    gap: 1em;
+    line-height: 1.5;
+    min-height: 100vh;
+    text-align: left;
 }
 
-body {
-	display: flex;
-	flex-direction: column;
-	overflow-y: scroll;
+strong {
+    font-weight: 700;
 }
 
-body > div {
-	padding: 1rem;
-}
-button:not(:disabled) {
-	cursor: pointer;
-}
-button:active,
-button:hover,
-button:focus {
-	outline: none;
+code {
+    border-bottom: 1px solid var(--secondary);
+    font-style: italic;
 }
 
-.stack > * + * {
-	margin-top: 1rem;
+pre {
+    background: var(--black);
+    border-left: 4px solid var(--secondary);
+    border-radius: 0 4px 4px 0;
+    color: var(--white);
+    font-family: "Fira Code", monospace;
+    overflow-x: auto;
+    padding: 1em;
+}
+
+pre code {
+    border: 0;
 }

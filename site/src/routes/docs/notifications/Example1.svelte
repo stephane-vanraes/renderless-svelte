@@ -6,7 +6,7 @@
 <button on:click={() => notifications.push("Rabbit 🐇")}>Rabbit 🐇</button>
 <button on:click={() => notifications.push("Hamster 🐹")}>Hamster 🐹</button>
 
-<Notification let:payload duration={10000}>
+<Notification let:payload>
     <span>{payload}</span>
 </Notification>
 
@@ -16,7 +16,7 @@
         padding: .75rem .5rem;
     }
     span {
-        background-color: var(--accent-2);
+        background-color: black;
         border-top-left-radius: .25rem;
         color: white;
         display: block;

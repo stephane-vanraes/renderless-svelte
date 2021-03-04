@@ -28,7 +28,7 @@
     .tabs {
 		display: flex;
 		flex-direction: row;
-        max-width: 400px;
+        max-width: 500px;
 		width: 100%;
     }
     button {
@@ -37,18 +37,17 @@
         padding: .25rem .5rem;
     }
     button.active {
-        background-color: var(--accent-2);
-        color: white;
+        background-color: #aeaeff;
     }
     button:disabled {
         background-color: #707070;
     }
     .tab {
         border: 1px solid #c0c0c0;
+        border-top: 0;
         display: block;
         height: 5rem;
-        margin-top: 0;
-        max-width: 400px;
+        max-width: 500px;
         padding: 1rem;
     }
 </style>
