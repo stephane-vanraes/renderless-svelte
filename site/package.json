@@ -1,7 +1,7 @@
 {
-  "name": "TODO",
-  "description": "TODO",
-  "version": "0.0.1",
+  "name": "renderless-svelte-site",
+  "description": "Website for renderless svelte",
+  "version": "1.0.0",
   "scripts": {
     "build": "sapper build --legacy --ext \".svelte .svx\"",
     "dev": "sapper dev --ext \".svelte .svx\"",
