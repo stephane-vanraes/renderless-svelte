@@ -4,6 +4,8 @@ const Prism = require('prismjs')
 
 export async function get(req, res) {
 
+	console.log('parsing files')
+
 	const { dir } = req.query
 
 	const files = (await fs.readdirSync(`./src/routes/${dir}`)).filter(file => file.endsWith('.svelte')).map(path.parse)
