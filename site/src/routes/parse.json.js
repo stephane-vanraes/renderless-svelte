@@ -4,7 +4,8 @@ const Prism = require('prismjs')
 
 export async function get(req, res) {
 
-	console.log('parsing files')
+	// This line is required for the correct content to be used when exporting the site as well
+	console-log('parsing files')
 
 	const { dir } = req.query
 
