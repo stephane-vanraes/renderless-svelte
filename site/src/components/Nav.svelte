@@ -9,7 +9,7 @@
     <Link href="/" borderless active={segment === undefined}><span>Home</span></Link>
     <Link href="/docs" borderless active={segment === 'docs'}><span>Docs</span></Link>
     <Link href="/recipes" borderless active={segment === 'recipes'}><span>Recipes</span></Link>
-    <Link href="/" target="_blank" borderless><Github /><span>Github</span></Link>
+    <Link href="https://github.com/stephane-vanraes/renderless-svelte" target="_blank" borderless><Github /><span>Github</span></Link>
 </nav>
 
 <style>

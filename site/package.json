@@ -6,12 +6,14 @@
     "build": "sapper build --legacy --ext \".svelte .svx\"",
     "dev": "sapper dev --ext \".svelte .svx\"",
     "export": "sapper export --legacy --ext \".svelte .svx\" --entry \"/ /404\"",
-    "start": "node __sapper__/build"
+    "start": "node __sapper__/build",
+    "serve": "sirv __sapper__/export"
   },
   "dependencies": {
     "compression": "^1.7.1",
     "polka": "next",
-    "sirv": "^1.0.0"
+    "sirv": "^1.0.0",
+    "sirv-cli": "^1.0.11"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
