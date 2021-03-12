@@ -23,4 +23,9 @@
     div > :global(svg) {
         font-size: 2em;
     }
+
+    div :global(a) {
+        text-decoration: underline;
+        text-decoration-color: black;
+    }
 </style>

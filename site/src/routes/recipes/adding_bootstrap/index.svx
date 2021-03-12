@@ -1,0 +1,50 @@
+<script>
+    import Note from '../../../components/Note.svelte'
+</script>
+
+## Renderless Svelte + Bootstrap
+
+Because of the it's complete lack of markup and styling, renderless svelte can be easily combined with css frameworks like Bootstrap or Tailwind.  When using a library like Bootstrap however that _also_ has a JavaScript part it is however important to remember to strip out all attributes Bootstrap uses to enable certain behaviour.
+
+The example below of a modal styled with Bootstrap uses the code and markup taken directly from the <a href="https://getbootstrap.com/docs/5.0/components/modal/" target="_blank">library's documentation</a>.  If you compare the two codes however you will see that some implementations detail like ids and `data-bs-xxx` attributes have been removed.  It is these attributes that Bootstrap uses within it's javascript to do it's magic.  Using renderless svelte however, we want to do this by ourselves.
+
+<Note>
+    Sadly enough a live demo cannot be added into the site because of the conflicts it creates between Bootstrap's styling and the site itself.  You can see the demo over on the <a href="https://svelte.dev/repl/d2f0ea81bc8640d3837ae62b389f8274" target="_blank">REPL</a> though.
+</Note>
+
+```html
+<script>
+	import { openModal, Modal } from 'renderless-svelte'
+</script>
+
+<svelte:head>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</svelte:head>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" on:click={openModal}>
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<Modal let:close>
+    <div class="modal-backdrop fade show"></div>
+    <div class="modal fade show" style="padding-right: 16px; display: block;" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" on:click={close} class="btn-close" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</Modal>
+````
