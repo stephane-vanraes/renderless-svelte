@@ -1,40 +1,39 @@
 <script context="module">
-	import { writable } from 'svelte/store'
-	
-	export const notifications = (() => {
-	
-		const { update, subscribe } = writable([])
-		const push = val => update(arr => [...arr, val])
-		const pop = () => update(arr => (arr.shift(), arr))
+  import { writable } from 'svelte/store';
 
-		return {
-			pop,
-			push,
-			subscribe
-		}	
-	})()
+  export const notifications = (() => {
+    const { update, subscribe } = writable([]);
+    const push = (val) => update((arr) => [...arr, val]);
+    const pop = () => update((arr) => (arr.shift(), arr));
+
+    return {
+      pop,
+      push,
+      subscribe,
+    };
+  })();
 </script>
 
-<script>	
-	import { createEventDispatcher } from 'svelte'
+<script>
+  import { createEventDispatcher } from 'svelte';
 
-	export let duration = 1000
+  export let duration = 1000;
 
-	const dispatch = createEventDispatcher()
-	let timeout
+  const dispatch = createEventDispatcher();
+  let timeout;
 
-	notifications.subscribe(({ length }) => {
-		if (timeout || !length) return
-		
-		dispatch('notify', $notifications[0])
-		
-		timeout = setTimeout(() => {
-			timeout = false
-			notifications.pop()
-		}, duration)
-	})	
+  notifications.subscribe(({ length }) => {
+    if (timeout || !length) return;
+
+    dispatch('notify', $notifications[0]);
+
+    timeout = setTimeout(() => {
+      timeout = false;
+      notifications.pop();
+    }, duration);
+  });
 </script>
 
 {#if $notifications[0]}
-	<slot payload="{$notifications[0]}"></slot>
+  <slot payload={$notifications[0]} />
 {/if}
