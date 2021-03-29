@@ -1,0 +1,59 @@
+<script context="module">
+    import load from '../../../utils/loader.js'
+
+    export async function preload({ path }) {
+        return load(path, this.fetch)
+    }
+</script>
+
+<script>
+    import Example from '../../../components/Example.svelte'
+    import Example1 from './Example1.svelte'
+    import Note from '../../../components/Note.svelte'
+
+    export let examples
+</script>
+
+## Modal V2
+
+The Modal V2 icomponent encapsulates typically modal behaviour as opening and closing, it does this while ensuring only one Modal is open at all times. As always in Renderless-Svelte the actual implementation of the look and feel of the Modal, including potential backdrops is completely up to the user.
+
+In order to work the Modal has to be defined in the markup somewhere, this can be easily done in places like App.svelte, or if using Sapper _layout.svelte. Since it shares resources accross the board, it could even be mounted as seperate component in the index.js file.
+
+<Note>Modal V2 differs from Modal in that it uses a component as payload instead of markup</Note>
+
+## openModal()
+
+The `openModal` function, exposed from the Modal takes as an argument a payload, it is this payload that will be send on to the Modal itself.
+
+```js
+import { openModal } from 'renderless-svelte'
+
+openModal({ ... })
+```
+
+## closeModal()
+
+The `closeModal` function will, when executed, close the modal.  This can be used in combination with `svelte:window` to bind a key to close the modals.
+
+```svelte
+<script>
+    import { closeModal } from 'renderless-velte'
+</script>
+
+<svelte:window on:keyup={ev => ev.key === 'Escape' && closeModal()}></svelte:window>
+```
+
+<Note>svelte:window has to always been on the top level of your markup</Note>
+
+## Modal
+
+The Modal component will render whatever component and props has been sent to it as a payload.  The rendered component will on top of the props from the payload receive a `close` function to close the modal again.
+
+| Property | Description |
+| -------- | ------------ |
+| close | a function to close the modal |
+
+## Examples
+
+<Example component={Example1} code={examples.Example1} />
