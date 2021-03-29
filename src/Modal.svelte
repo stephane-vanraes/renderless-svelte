@@ -1,27 +1,29 @@
 <script context="module">
-    import { get, writable } from 'svelte/store'
+  import { get, writable } from 'svelte/store';
 
-    let _open = writable(false)
-    let _payload = writable({})
+  const _open = writable(false);
+  const _payload = writable({});
 
-    let _closePromise
+  let _closePromise;
 
-    export const openModal = payload => {
-        _open.set(true)
-        _payload.set(payload)
-        return new Promise(resolve => { _closePromise = resolve })
+  export const openModal = (payload) => {
+    _open.set(true);
+    _payload.set(payload);
+    return new Promise((resolve) => {
+      _closePromise = resolve;
+    });
+  };
+
+  export const closeModal = () => {
+    _open.set(false);
+    if (typeof _closePromise === 'function') {
+      _closePromise(get(_payload));
     }
-
-    export const closeModal = () => {
-        _open.set(false)
-        if (typeof _closePromise === 'function') {
-            _closePromise(get(_payload))
-        }
-    }
+  };
 </script>
 
 <script></script>
 
 {#if $_open}
-    <slot payload={$_payload} close={closeModal}></slot>
+  <slot payload={$_payload} close={closeModal} />
 {/if}
