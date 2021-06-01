@@ -1,4 +1,5 @@
 <script>
+  import { onMount } from "svelte";
   export let items = [];
   export let currentIndex = 0;
   export let loop = false;
