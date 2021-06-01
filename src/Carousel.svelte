@@ -1,5 +1,5 @@
 <script>
-  import { onMount } from "svelte";
+  import { onMount, onDestroy } from "svelte";
   export let items = [];
   export let currentIndex = 0;
   export let loop = false;
@@ -17,13 +17,15 @@
         currentIndex != 0 ? currentIndex - 1 : loop ? items.length - 1 : 0),
   };
   export let autoplayInterval = -1; // autoplay disactivated by default
+  let interval;
   const autoplay = () => {
     loop = true; // sets loop to true when autoplaying
-    setInterval(controls.next, autoplayInterval);
+    interval = setInterval(controls.next, autoplayInterval);
   };
   onMount(() => {
     autoplayInterval > 0 ? autoplay() : {};
   });
+  onDestroy(() => clearInterval(interval));
   $: payload = items[currentIndex];
 </script>
 
