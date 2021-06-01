@@ -15,6 +15,14 @@
       (currentIndex =
         currentIndex != 0 ? currentIndex - 1 : loop ? items.length - 1 : 0),
   };
+  export let autoplayInterval = -1; // autoplay disactivated by default
+  const autoplay = () => {
+    loop = true; // sets loop to true when autoplaying
+    setInterval(controls.next, autoplayInterval);
+  };
+  onMount(() => {
+    autoplayInterval > 0 ? autoplay() : {};
+  });
   $: payload = items[currentIndex];
 </script>
 
