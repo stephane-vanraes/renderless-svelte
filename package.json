@@ -1,6 +1,6 @@
 {
   "name": "renderless-svelte",
-  "version": "1.7.0",
+  "version": "2.0.0",
   "description": "A collection of renderless Svelte components",
   "homepage": "https://www.renderless-svelte.dev",
   "repository": {
@@ -24,7 +24,13 @@
   "files": [
     "src",
     "dist/index.js",
-    "dist/index.mjs"
+    "dist/index.mjs",
+    "dist/actions/index.js",
+    "dist/actions/index.mjs",
+    "dist/common/index.js",
+    "dist/common/index.mjs",
+    "dist/functions/index.js",
+    "dist/functions/index.mjs"
   ],
   "devDependencies": {
     "rollup": "^2.32.1",
