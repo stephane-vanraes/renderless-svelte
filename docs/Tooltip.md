@@ -21,7 +21,7 @@ The Tooltip component itself can be placed anywhere in your markup, but it is re
 | Property | Description |
 | -------- | ----------- |
 | options | This is the same options as was passed to the action. |
-| dimensions | This are the coordinates and dimensions of the element (x, y, widht, height) |
+| dimensions | This are the coordinates and dimensions of the element (x, y, width, height) |
 
 **`options` will be set to false if no element is hovered**
 
