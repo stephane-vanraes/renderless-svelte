@@ -1,0 +1,16 @@
+---
+title: clickOutside
+tags: action clickOutside
+---
+
+# ClickOutside
+
+The clickOutside action offers a way to easily detect when a user clicks outside the boundaries of a given component. If so, it will raise a `click_outside` event.
+
+```html
+<script>
+  import clickOutside from 'renderless-svelte/utils';
+</script>
+
+<div use:clickOutside on:click_outside="{console.log}">Content</div>
+```

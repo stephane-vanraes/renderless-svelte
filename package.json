@@ -1,41 +1,26 @@
 {
   "name": "renderless-svelte",
   "version": "2.0.0",
-  "description": "A collection of renderless Svelte components",
-  "homepage": "https://www.renderless-svelte.dev",
-  "repository": {
-    "url": "https://github.com/stephane-vanraes/renderless-svelte"
-  },
-  "svelte": "src/index.js",
-  "module": "dist/index.mjs",
-  "main": "dist/index.js",
-  "types": "src/index.d.ts",
   "scripts": {
-    "build": "rollup -c",
-    "prepublishOnly": "npm run build"
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "preview": "svelte-kit preview",
+    "package": "svelte-kit package",
+    "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
+    "format": "prettier --write --plugin-search-dir=. ."
   },
-  "keywords": [
-    "svelte",
-    "components",
-    "renderless"
-  ],
-  "author": "Stephane Vanraes",
-  "license": "ISC",
-  "files": [
-    "src",
-    "dist/index.js",
-    "dist/index.mjs",
-    "dist/actions/index.js",
-    "dist/actions/index.mjs",
-    "dist/common/index.js",
-    "dist/common/index.mjs",
-    "dist/functions/index.js",
-    "dist/functions/index.mjs"
-  ],
   "devDependencies": {
-    "rollup": "^2.32.1",
-    "@rollup/plugin-node-resolve": "11.2.0",
-    "rollup-plugin-svelte": "^6.1.0",
-    "svelte": "^3.29.4"
-  }
+    "@netulip/rollup-plugin-svg": "^0.0.3",
+    "@sveltejs/kit": "next",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-svelte3": "^3.2.0",
+    "mdsvex": "^0.9.7",
+    "prettier": "~2.2.1",
+    "prettier-plugin-svelte": "^2.2.0",
+    "svelte": "^3.34.0",
+    "svelte2tsx": "^0.4.1",
+    "typescript": "^4.3.5"
+  },
+  "type": "module"
 }

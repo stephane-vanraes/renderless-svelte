@@ -1,0 +1,53 @@
+---
+title: Step By Step Form
+tags: tabcontrol
+---
+
+<script>
+    import Example from './_Example.svelte';
+</script>
+
+# Creating a step by step form
+
+A common pattern to reduce UI clutter when having the user fill out forms is to do so in several steps. Each of these steps can group a logical chunck of information, a good example would be the checkout for an online shop requiring the following 4 easy steps:
+
+- Ask for personal details
+- Ask for a delivery address
+- Get payment details
+- Show a summary
+
+In it's most basic form this could look like this:
+
+<Example />
+
+## Going to the next step
+
+The disadvantage with this approach is that it doesn't guide the user, after filling in each field they have to themselves go the next screen. It is common to include a button on each tab to go the next tab. This can be easily done by leveraging the `controls` object from the TabControl together with the _ids_ from the TabControlItems.
+
+```html
+<TabControl let:controls>
+    <TabControlItem id="A">
+        <button on:click={() => controls.set('B')}>
+            Next
+        </button>
+    <TabControlItem id="B" />
+</TabControl>
+```
+
+<Example showNext />
+
+## Disabling steps not taken
+
+A final touch can be to _disable_ steps until the previous one has been taken. For this we can also use the `controls` object, in the example here we will enable the step when the user clicks on _next_.
+
+```html
+<TabControl let:controls>
+    <TabControlItem id="A">
+        <button on:click={() => { controls.enabled('B'); controls.set('B') }}>
+            Next
+        </button>
+    <TabControlItem id="B" disabled={true} />
+</TabControl>
+```
+
+<Example showNext disabled />

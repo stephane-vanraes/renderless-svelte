@@ -1,0 +1,10 @@
+---
+title: Notifications
+tags: notifications
+---
+
+# Notifications
+
+The notifications module of renderless-svelte consists of two parts:
+
+- a shared nofitications

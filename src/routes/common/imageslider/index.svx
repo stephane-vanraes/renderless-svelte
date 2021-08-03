@@ -1,0 +1,13 @@
+---
+title: Image Slider
+tags: carousel
+---
+
+<script>
+    import ImageSlider from './_ImageSlider.svelte'
+</script>
+
+<div style="margin: auto; max-width: 600px;">
+    <ImageSlider>
+    </ImageSlider>
+</div>

@@ -1,0 +1,46 @@
+---
+title: Carousel
+tags: carousel
+---
+
+<script>    
+	import MyCarousel from '$site/components/MyCarousel.svelte';
+</script>
+
+# Carousel
+
+<MyCarousel />
+
+## Usage
+
+```svelte
+<script>
+  import { Carousel } from 'renderless-svelte';
+
+  const items = ['A', 'B', 'C'];
+</script>
+
+<Carousel {items} let:current let:controls>
+  <button on:click={controls.previous}>Previous</button>
+  <span>{current}</span>
+  <button on:click={controls.next}>Next</button>
+</Carousel>
+```
+
+## Properties
+
+| Name         | Type   | Default | Description                                                                               |
+| ------------ | ------ | ------- | ----------------------------------------------------------------------------------------- |
+| items        | Array  | []      | The items used for this carousel.                                                         |
+| currentIndex | Number | 0       | The index of the current item.                                                            |
+| loop         | bool   | false   | Flag indicating that the carousel should loop on itself.                                  |
+| controls     | Object |         | An object exposing controls for the carousel.                                             |
+| direction    | Number | 1       | 1 if the Carousel is moving in the _next_ direction, -1 with _previous_ and 0 with _set_. |
+
+## Controls
+
+| Name     | Description                              |
+| -------- | ---------------------------------------- |
+| next     | Moves the carousel to the next item.     |
+| previous | Moves the carousel to the previous item. |
+| set      | Sets the carousel to the given index.    |

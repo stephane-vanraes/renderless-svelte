@@ -1,0 +1,28 @@
+---
+title: Sliding Accordion
+tags: accordion
+---
+
+<script>
+    import Example from './Example.svelte';
+</script>
+
+# Sliding Accordion
+
+<Example />
+
+By default none of the _Renderless-Svelte_ components comes with any styling or animations. This means that accordions just appear and dissappear as a block like seen in the example above. To improve this behaviour we can use the `slide` transition that comes with Svelte to animate the accordions in a smooth way.
+
+```svelte
+<script>
+  import { slide } from 'svelte/transition';
+  import { Accordion } from 'renderless-svelte';
+</script>
+
+<Accordion>
+  <button let:toggle on:click={toggle}>Toggle</button>
+  <div transition:slide>Content goes here</div>
+</Accordion>
+```
+
+<Example duration={500} />

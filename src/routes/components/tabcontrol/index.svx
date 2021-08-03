@@ -1,0 +1,76 @@
+---
+title: TabControl
+tags: tabcontrol
+---
+
+<script>
+    import Example from './_Example.svelte';
+</script>
+
+# TabControl
+
+<Example />
+
+## Usage
+
+```svelte
+<script>
+  import { TabControl, TabControlItem } from 'renderless-svelte';
+</script>
+
+<TabControl>
+    <div slot="tabs" let:tabs>
+        {#each tabs as tab}
+            <button on:click={tab.select} class:active={tab.active}>
+                {tab.props.title}
+            </button>
+        {/each}
+    </div>
+    <TabControlItem id="Tab1" title="tab 1" active>
+        This is tab 1
+    </TabcontrolItem>
+    <TabControlItem id="Tab2" title="tab 2" active>
+        This is tab 2
+    </TabcontrolItem>
+</TabControl>
+```
+
+## Properties for `Tabcontrol`
+
+| Name        | Type   | Default         | Description                                          |
+| ----------- | ------ | --------------- | ---------------------------------------------------- |
+| contextName | string | "rs-tabcontrol" | Used in the TabControlItem                           |
+| controls    | Object |                 | Object exposing a set of controls for the tabcontrol |
+
+The `controls` object has the following methods
+
+| Name    | Arguments | Description                            |
+| ------- | --------- | -------------------------------------- |
+| set     | string    | Activates the tab with the given id    |
+| enable  | string    | Enables the the tab with the given id  |
+| disable | string    | Disables the the tab with the given id |
+
+## Properties of `slot='tabs'`
+
+| Name | Type  | Default | Description          |
+| ---- | ----- | ------- | -------------------- |
+| tabs | Array | []      | An array of the tabs |
+
+Each `tab` has the following properties
+
+| Name     | Type     | Default | Description                                   |
+| -------- | -------- | ------- | --------------------------------------------- |
+| active   | bool     | false   | Indicates this is the active tab              |
+| disabled | bool     | false   | The state of the tab                          |
+| id       | string   | string  | The id of the TabControlItem                  |
+| select   | Function |         | Function selecting this tab as the active one |
+| props    | Object   |         | Other props passed down to the TabControlItem |
+
+## Properties of `TabControlItem`
+
+| Name        | Type   | Default         | Description                       |
+| ----------- | ------ | --------------- | --------------------------------- |
+| active      | bool   | false           | Marks this item as the active tab |
+| contextName | string | "rs-tabcontrol" | Links the item to the TabControl  |
+| disabled    | bool   |                 | The state of tab                  |
+| id          | string |                 | Unique identifier for the tab     |

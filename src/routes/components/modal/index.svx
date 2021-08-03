@@ -1,0 +1,55 @@
+---
+title: Modal
+tags: modal
+---
+
+<script>
+	import Example from './_Example.svelte';
+	import HintBlock from '$site/components/HintBlock.svelte';
+</script>
+
+# Modal
+
+<Example />
+
+## Methods
+
+| Name       | Parameters             | Return  | Description                                      |
+| ---------- | ---------------------- | ------- | ------------------------------------------------ |
+| openModal  | (SvelteComponent, any) | Promise | Opens a modal with the given component and props |
+| closeModal | None                   | void    | Closes the topmost modal                         |
+
+## Usage
+
+### Opening a modal
+
+Opening a modal is done with the `openModal` method, this method takes a Svelte Component and an object as parameters. It is this component that will be used to render the modal with the given props.
+
+```js
+openModal(MyComponent, myprops);
+```
+
+The function returns a promise which is resolved when the modal closes. This can be used to pass data from the modal back to the component that opened the modal:
+
+```js
+openModal(MyComponent, myprops).then(doSomething);
+```
+
+The library allows to open multiple modals (but only one will be visible at all times) by internally using a stack to keep track of modals.
+
+### Closing a modal
+
+Calling `closeModal` will close the topmost modal. The function takes one parameter that, if present, will be passed on to the resolution of the promise from `openModal`. If no parameter is provided, the promise will receive the props passed in during creation.
+
+<HintBlock title="The Modal Component">
+Users migrating from renderless-svelte 1.x will notice there is no longer a need to define a anchoring component in your code, in version 2 the _openModal_ method will instead mount a placeholder component on the document body.
+</HintBlock>
+
+```svelte
+<script>
+  import { openModal } from 'renderless-svelte';
+  import Component from './Component.svelte';
+</script>
+
+<button on:click={() => openModal(Component)}>Click to open modal</button>
+```

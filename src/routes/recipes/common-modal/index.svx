@@ -1,0 +1,76 @@
+---
+title: Creating a common modal
+tags: modal clickOutside
+---
+
+# Creating a common modal
+
+Most of the modals in an application will have the same look and feel, therefore it can be interesting to create a type of _wrapper_ around the modal infrastructure provided by renderless-svelte and use this as a starting base for your own modals.
+
+The code belows shows a very basic example of this, together with the usage.
+
+```html
+<!-- StyledModal.svelte -->
+<script>
+  import { closeModal } from 'renderless-svelte';
+  import { clickOutside } from 'renderless-svelte/utils';
+
+  const close = () => closeModal({ cancelled: true });
+  const handleKey = ({ key }) => key === 'Escape' && close();
+</script>
+
+<svelte:window on:keyup="{handleKey}" />
+
+<div role="dialog" on:click_outside="{close}">
+  <div>
+    <button on:click="{close}" aria-label="Close modal">&times;</button>
+  </div>
+  <slot />
+</div>
+```
+
+The _StyledModal_ also uses [clickOutside](/utils/clickOutside), an action detecting when users click outside of an element.
+
+```html
+<!-- NameModal.svelte -->
+<script>
+  import { closeModal } from 'renderless-svelte';
+  import StyledModal from './StyledModal.svelte';
+
+  export let name = '';
+
+  function save() {
+    closeModal({ name });
+  }
+
+  function cancel() {
+    closeModal({ cancelled: true });
+  }
+</script>
+
+<form on:submit|preventDefault="{save}">
+  <label>Enter your name</label>
+  <input type="text" bind:value="{name}" />
+  <button type="submit">Submit</button>
+  <button type="button" on:click="{cancel}">Cancel</button>
+</form>
+```
+
+In _NameModal_ we see a good example that it is easy to signal to the customer how the modal was closed by passing `{ cancelled: true }` as payload to the modal's promise.
+
+```html
+<!-- App.svelte -->
+<script>
+  import { openModal } from 'renderless-svelte';
+  import NameModal from './NameModal.svelte';
+
+  async function handleClick() {
+    const res = await openModal(NameModal);
+    if (!res.cancelled) {
+      let { name } = res;
+    }
+  }
+</script>
+
+<button on:click="{handleClick}">Click here</button>
+```

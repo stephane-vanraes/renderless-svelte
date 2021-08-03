@@ -1,0 +1,47 @@
+---
+title: Animated Carousel
+tags: carousel
+---
+
+<script>
+  import MyCarousel from '$site/components/MyCarousel.svelte';
+</script>
+
+# Creating an animated carousel
+
+Just using the default Carousel provided by _Renderless-Svelte_ will give you a 'jumpy' experience. But it is acutally easy to make this smoother, all we need to use is a combination of CSS and the `#key` keyword from Svelte.
+
+Svelte will always try to simply update the innerHTML, this can be easily seen in the example below, if you inspect the elements and see what happens when you click next or previous: only the image source attribute will change, the actual image stays the same.
+
+<MyCarousel />
+
+## The `#key` keyword
+
+Because the tag is still the same, we can not use Svelte transitions (in:_ out:_) because those only work the tag _itself_ is added or removed. With the `#key` directive we can explicitely instruct Svelte to force a rerender of the enclosed html whenever the given key changes.
+
+```svelte
+{#key current}
+  <img src={current.src} alt="{current.alt}}" />
+{/key}
+```
+
+With this extra code, Svelte will destroy the entire tag and then rebuild it, making it easier to add transitions.
+
+## Making it move left and right
+
+Now that we can apply animations to the image, we use the `direction` property from the Carousel to change the behaviour of the animation to give a sliding effect.
+
+```svelte
+<Carousel let:current let:direction>
+  {#key current}
+    <img
+      src={current.src}
+      alt={current.alt}
+      in:fly={{ x: direction * 400 }}
+      out:fly={{ x: direction * -400 }}
+    />
+  {/key}
+</Carousel>
+```
+
+<MyCarousel duration="1000" />

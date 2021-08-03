@@ -1,0 +1,46 @@
+---
+title: AccordionGroup
+tags: accordion
+---
+
+<script>
+	import AccordionGroup from '$lib/components/AccordionGroup.svelte';
+	import HintBlock from '$site/components/HintBlock.svelte';
+	import MyAccordion from '$site/components/MyAccordion.svelte';
+</script>
+
+# AccordionGroup
+
+<div>
+	<AccordionGroup>
+		<MyAccordion title="Toggle">Actual Content</MyAccordion>
+		<MyAccordion title="Toggle">Actual Content</MyAccordion>
+		<MyAccordion title="Toggle">Actual Content</MyAccordion>
+		<MyAccordion title="Toggle">Actual Content</MyAccordion>
+	</AccordionGroup>
+</div>
+
+## Usage
+
+```svelte
+<script>
+  import { Accordion, AccordionGroup } from 'renderless-svelte';
+</script>
+
+<AccordionGroup>
+  <Accordion>...</Accordion>
+  <Accordion>...</Accordion>
+  <Accordion>...</Accordion>
+  <Accordion>...</Accordion>
+</AccordionGroup>
+```
+
+## Properties
+
+| Name        | Type   | Default        | Description                                        |
+| ----------- | ------ | -------------- | -------------------------------------------------- |
+| contextName | string | "rs-accordion" | Changes the name of the context for the ContextAPI |
+
+<HintBlock title="Changing the contextName">
+    Remember to also use the same contextName on the accordions themselves.
+</HintBlock>

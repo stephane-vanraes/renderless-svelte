@@ -1,0 +1,38 @@
+---
+title: Autoplay Carousel
+tags: carousel
+---
+
+<script>
+    import Example from './Example.svelte';
+</script>
+
+# Autoplayer for Carousel
+
+<Example />
+
+The autoplayer is a utility function that adds the possibility to _play_ a carousel. It takes as first argument the carousel itself and as second argument a configuration object.
+
+## Usage
+
+```svelte
+<script>
+  import { Carousel } from 'renderless-svelte';
+  import Autoplayer from 'renderless-svelte/utils/autoplayer';
+
+  let carousel;
+  $: player = carousel && Autoplayer(Carousel, { interval: 2000 });
+</script>
+
+<Carousel bind:this={carousel}>...</Carousel>
+<button on:click={player.start}>Start</button>
+<button on:click={player.stop}>Stop</button>
+```
+
+## Configuration
+
+| Name      | Type   | Default | Description                                                                              |
+| --------- | ------ | ------- | ---------------------------------------------------------------------------------------- |
+| direction | string | next    | _next_ or _previous_, indicates the direction in which it should play through the items. |
+| interval  | Number | 2000    | Interval between iterations in milliseconds.                                             |
+| playing   | bool   | false   | Initial state of the player.                                                             |
