@@ -3,8 +3,43 @@ title: Notifications
 tags: notifications
 ---
 
+<script>
+    import Example from './_Example.svelte';
+</script>
+
 # Notifications
 
-The notifications module of renderless-svelte consists of two parts:
+<Example />
 
-- a shared nofitications
+In renderless-svelte notifications are added to a queue and displayed in order, after a given timeout the notification dissappears and the next one is shown.
+
+## Methods
+
+| Name                       | Parameters                     | Return | Description                              |
+| -------------------------- | ------------------------------ | ------ | ---------------------------------------- |
+| addNotification            | (SvelteComponent, any, number) | void   | Adds a notification to the queue         |
+| removeNotification         | None                           | void   | Removes the topmost notification         |
+| setMaxNumberOfNotification | Number                         | void   | Sets the maximum number of notifications |
+
+## Usage
+
+Adding a notification to the queue is done with the `addNotification` method, it takes a Svelte Component and any other form of data as arguments. The final, optional argument indicates how long this notification should stay open, the default value is 1000ms. This data will be then be passed to the given component and be used to render the notification.
+
+```js
+addNotification(MyNotificationComponent, props); // with the default 1000 ms delay
+addNotification(MyNotificationComponent, props, 2000); // with a 2000 ms delay
+```
+
+Once the notification is shown it will remain visible for the duration given as third argument (by default 1000). It is also possible to use `removeNotification` to close the top notification forcefully.
+
+```js
+removeNotification();
+```
+
+### Limiting the number of notifications
+
+In order to prevent spamming the user's UI with notifications the number of notifications is limited. The default limit is set to 1, but this can be changed by calling the method `setMaxNumberOfNotifications`. In practice the component will take a slice of the notification queue of the lenght of this value.
+
+### Index of notifications
+
+The component passed in `addNotification` will receive all the props that were passed into this component, as well as one extra prop provided by the library, namely `notificationIndex` which indicates the position of this notification in the queue. This property can be used to position notifications such that they do not overlap. An example of this can be found in the recipes section.

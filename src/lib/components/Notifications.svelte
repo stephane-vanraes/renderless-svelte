@@ -1,30 +1,35 @@
 <script context="module">
   import { get, writable } from 'svelte/store';
-  import Modal from './_Modal.svelte';
+  import Notification from './_Notification.svelte';
 
   let isRendered = false;
   const isOpen = writable(false);
-  const payload = writable([]);
+  const payloads = writable([]);
+  const maxNumberOfNotifications = writable(1);
 
-  export const closeModal = (msg) => {
-    const [current, ...rest] = get(payload);
-    payload.set(rest);
-    isOpen.set(get(payload).length);
+  export const setMaxNumberOfNotifications = maxNumberOfNotifications.set;
+
+  export const removeNotification = () => {
+    const [_, ...rest] = get(payloads);
+    payloads.set(rest);
+    isOpen.set(get(payloads).length);
   };
 
-  export const openModal = (component, props = {}) => {
+  export const addNotification = (component, props = {}, timeout = 5000) => {
     if (!isRendered) {
-      new Modal({
+      new Notification({
         target: document.body,
         props: {
-          payload,
+          maxNumberOfNotifications,
+          removeNotification,
+          payloads,
           isOpen
         }
       });
       isRendered = true;
     }
 
-    payload.update((p, timeout = 1000) => [{ component, props, timeout }, ...p]);
+    payloads.update((p) => [...p, { component, props, timeout }]);
     isOpen.set(true);
   };
 </script>

@@ -2,20 +2,27 @@
     The actual Notification wrapper is kept seperate from the Notifications 'manager' to prevent circular dependencies.
 -->
 <script>
+  import { each } from 'svelte/internal';
+
   export let isOpen;
+  export let maxNumberOfNotifications;
   export let payloads;
+  export let removeNotification;
 
   let timeout;
-  payloads.subscribe(({ length }) => {
-    if (timeout || !length) return;
-
+  payloads.subscribe((ps) => {
+    if (timeout || !ps.length) return;
     timeout = setTimeout(() => {
       timeout = false;
-      payloads.pop();
-    }, payloads[0].timeout);
+      removeNotification();
+    }, ps[0].timeout);
   });
+
+  $: payloadsToShow = $payloads.slice(0, $maxNumberOfNotifications);
 </script>
 
-{#if $payloads.length && $isOpen}
-  <svelte:component this={$payloads[0].component} {...$payloads[0].props} />
+{#if $isOpen}
+  {#each payloadsToShow as p, notificationIndex (p)}
+    <svelte:component this={p.component} {...p.props} {notificationIndex} />
+  {/each}
 {/if}
