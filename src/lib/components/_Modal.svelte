@@ -4,8 +4,12 @@
 <script>
   export let isOpen;
   export let payload;
+
+  $: console.log($payload);
 </script>
 
 {#if $payload.length && $isOpen}
-  <svelte:component this={$payload[0].component} {...$payload[0].props} />
+  {#each $payload as { component, props }}
+    <svelte:component this={component} {...props} />
+  {/each}
 {/if}

@@ -7,9 +7,10 @@
   const payload = writable([]);
 
   export const closeModal = (msg) => {
-    const [current, ...rest] = get(payload);
-    payload.set(rest);
-    isOpen.set(get(payload).length);
+    const modals = get(payload);
+    const current = modals.pop()
+    payload.set(modals);
+    isOpen.set(modals.length);
 
     current.resolve(msg ?? current.props);
   };
@@ -30,7 +31,7 @@
 
     const promise = new Promise((res) => (resolve = res));
 
-    payload.update((p) => [{ component, props, resolve }, ...p]);
+    payload.update((p) => [...p, { component, props, resolve }]);
     isOpen.set(true);
 
     return promise;
