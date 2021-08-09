@@ -4,8 +4,6 @@
 <script>
   export let isOpen;
   export let payload;
-
-  $: console.log($payload);
 </script>
 
 {#if $payload.length && $isOpen}
