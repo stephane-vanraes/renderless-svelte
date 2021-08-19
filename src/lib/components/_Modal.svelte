@@ -7,11 +7,7 @@
 </script>
 
 {#if $payload.length && $isOpen}
-  {#each $payload as { component, spreadProps, props }}
-    {#if spreadProps}
-      <svelte:component this={component} {props} />
-    {:else}
-      <svelte:component this={component} {...props} />
-    {/if}
+  {#each $payload as { component, props }, modalIndex}
+    <svelte:component this={component} {...props} {modalIndex} />
   {/each}
 {/if}
