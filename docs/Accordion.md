@@ -13,7 +13,7 @@ If you group Accordions together in one _AccordionGroup_ this will automatically
 
 ```svelte
 <script>
-    import { Accordion, AccordionGroup } from '../../../../../src/index'
+    import { Accordion, AccordionGroup } from 'renderless-svelte'
 </script>
 
 <AccordionGroup>
@@ -30,7 +30,7 @@ AccordionGroup has no properties or events itself, it is just a wrapper with som
 
 ```svelte
 <script>
-    import { Accordion } from '../../../../../src/index'
+    import { Accordion } from 'renderless-svelte'
 </script>
 
 <Accordion>
@@ -43,7 +43,7 @@ AccordionGroup has no properties or events itself, it is just a wrapper with som
 
 ```svelte
 <script>
-    import { Accordion, AccordionGroup } from '../../../../../src/index'
+    import { Accordion, AccordionGroup } from 'renderless-svelte'
 </script>
 
 <AccordionGroup>
