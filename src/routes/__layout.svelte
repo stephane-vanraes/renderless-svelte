@@ -4,6 +4,7 @@
 	import '../app.css';
 </script>
 
+<svelte:body style="background-color: red" />
 <Header />
 
 <main>

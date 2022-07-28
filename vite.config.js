@@ -6,10 +6,9 @@ const config = {
 	plugins: [sveltekit()],
 	resolve: {
 		alias: {
-			$site: resolve('./src/site'),
+			$site: resolve('./src/site')
 		}
 	}
-	
 };
 
 export default config;

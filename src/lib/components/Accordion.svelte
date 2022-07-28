@@ -1,14 +1,17 @@
 <script lang="ts">
 	import { getContext } from 'svelte';
-	import type { AccordionContext } from './AccordionGroup.svelte';
 
 	export let contextName = 'rs-accordion';
 	export let open = false;
 
 	let isOpen = open;
 
-	const close = () => (isOpen = false);
-	const toggle = () => (isOpen = !isOpen);
+	const close = () => {
+		isOpen = false;
+	};
+	const toggle = () => {
+		isOpen = !isOpen;
+	};
 
 	export const controls = {
 		close,
@@ -16,8 +19,7 @@
 		toggle
 	};
 
-	const context: AccordionContext = getContext(contextName);
-	const setCurrent = context && context.setCurrent;
+	const setCurrent = getContext<AccordionContext>(contextName);
 
 	$: isOpen && setCurrent && setCurrent(close);
 </script>

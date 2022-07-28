@@ -12,7 +12,7 @@ declare namespace App {
 
 declare namespace Site {
 	interface Component {
-		name: string,
-		url: string
+		name: string;
+		url: string;
 	}
 }

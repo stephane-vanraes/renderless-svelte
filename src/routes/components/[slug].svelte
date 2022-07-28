@@ -1,4 +1,8 @@
 <script lang="ts">
+	import TabControl from '$lib/components/TabControl.svelte';
+	import TabControlItem from '$lib/components/TabControlItem.svelte';
+	import Article from '$site/components/Article.svelte';
+	import Demos from '$site/components/Demos.svelte';
 	import type { SvelteComponent } from 'svelte';
 
 	export let files: string[] = [];
@@ -13,34 +17,16 @@
 	$: loadAll(files);
 </script>
 
-<article>
-	{@html markup}
-</article>
-
-<hr />
-
-<section id="demos">
-	{#each demos as component}
-		<svelte:component this={component} />
-	{/each}
-</section>
-
-<style>
-	article,
-	section {
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-	}
-	article :global(:where(h1, h2)) {
-		font-weight: 600;
-	}
-
-	article :global(pre) {
-		background-color: burlywood;
-		font-family: monospace;
-		overflow-x: auto;
-		max-width: 100%;
-		padding: 0.25rem;
-	}
-</style>
+<TabControl>
+	<div slot="tabs" let:tabs>
+		{#each tabs as tab}
+			<button on:click={tab.select}>{tab.payload}</button>
+		{/each}
+	</div>
+	<TabControlItem active payload="Documentation">
+		<Article {markup} />
+	</TabControlItem>
+	<TabControlItem payload="Demos">
+		<Demos {demos} />
+	</TabControlItem>
+</TabControl>
