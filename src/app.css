@@ -1,0 +1,24 @@
+*, *:after, *:before {
+    box-sizing: border-box;
+    color: inherit;
+    font: inherit;
+    line-height: 1.25;
+    margin: 0;
+    padding: 0;
+    text-decoration: inherit;
+}
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+ul {
+    list-style-type: none;
+}
+img {
+    display: block;
+    width: 100%;
+}

@@ -9,3 +9,10 @@ declare namespace App {
 	// interface Session {}
 	// interface Stuff {}
 }
+
+declare namespace Site {
+	interface Component {
+		name: string,
+		url: string
+	}
+}
