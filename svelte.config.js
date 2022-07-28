@@ -1,31 +1,14 @@
-import path from 'path';
-import svg from '@netulip/rollup-plugin-svg';
-import md from 'mdsvex';
-import mdsvexConfig from './mdsvex.config.js';
-
-import fs from 'fs';
-const pkg = JSON.parse(fs.readFileSync('./package.json'));
+import adapter from '@sveltejs/adapter-auto';
+import preprocess from 'svelte-preprocess';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	extensions: ['.svelte', '.svg', ...mdsvexConfig.extensions],	
-	preprocess: [
-		md.mdsvex(mdsvexConfig)
-	],
+	// Consult https://github.com/sveltejs/svelte-preprocess
+	// for more information about preprocessors
+	preprocess: preprocess(),
+
 	kit: {
-		target: 'body',
-		vite: {
-			plugins: [
-				svg.default({
-					enforce: 'pre'
-				})
-			],
-			resolve: {
-				alias: {
-					$site: path.resolve('./src/site')
-				}
-			}
-		}
+		adapter: adapter()
 	}
 };
 
