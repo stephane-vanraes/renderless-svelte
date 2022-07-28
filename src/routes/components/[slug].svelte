@@ -13,8 +13,34 @@
 	$: loadAll(files);
 </script>
 
-{@html markup}
+<article>
+	{@html markup}
+</article>
 
-{#each demos as component}
-	<svelte:component this={component} />
-{/each}
+<hr />
+
+<section id="demos">
+	{#each demos as component}
+		<svelte:component this={component} />
+	{/each}
+</section>
+
+<style>
+	article,
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+	article :global(:where(h1, h2)) {
+		font-weight: 600;
+	}
+
+	article :global(pre) {
+		background-color: burlywood;
+		font-family: monospace;
+		overflow-x: auto;
+		max-width: 100%;
+		padding: 0.25rem;
+	}
+</style>
