@@ -13,7 +13,7 @@
 
 <style>
 	footer {
-		background-color: var(--primary, #eee);
+		background-color: var(--gray-700);
 		display: flex;
 		gap: 1rem;
 		justify-content: space-between;
@@ -23,5 +23,13 @@
 	nav {
 		display: flex;
 		flex-direction: column;
+	}
+
+	a:is(:active, :focus, :hover) {
+		text-decoration: underline;
+	}
+
+	nav {
+		margin-inline: auto;
 	}
 </style>

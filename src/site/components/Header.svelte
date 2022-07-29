@@ -14,24 +14,32 @@
 
 <style>
 	header {
-		background-color: var(--primary, #eee);
-		padding: 1rem;
-	}
-	nav {
-		justify-content: end;
-		display: flex;
-		gap: 1rem;
-	}
-
-	a {
-		text-decoration: underline;
+		background-color: var(--primary-400);
+		padding: 1rem 1rem 0;
 	}
 
 	a:is(:active, :focus, :hover) {
-		color: green;
+		text-decoration: underline;
 	}
 
 	a[aria-current~='true'] {
-		color: red;
+		background-color: var(--gray-1000);
+	}
+
+	nav {
+		justify-content: end;
+		display: flex;
+	}
+
+	nav > a {
+		border-radius: 0.25rem 0.25rem 0 0;
+		padding: 0.25rem 0.5rem;
+	}
+	nav > a:is(:active, :focus, :hover) {
+		background-color: var(--primary-200);
+	}
+
+	.title {
+		font-size: 2rem;
 	}
 </style>

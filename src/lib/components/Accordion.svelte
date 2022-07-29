@@ -4,28 +4,14 @@
 	export let contextName = 'rs-accordion';
 	export let open = false;
 
-	let isOpen = open;
+	const context = getContext<AccordionContext>(contextName) || (() => {});
+	const toggle = () => (open = !open);
 
-	const close = () => {
-		isOpen = false;
-	};
-	const toggle = () => {
-		isOpen = !isOpen;
-	};
-
-	export const controls = {
-		close,
-		open: () => (isOpen = true),
-		toggle
-	};
-
-	const setCurrent = getContext<AccordionContext>(contextName);
-
-	$: isOpen && setCurrent && setCurrent(close);
+	$: open && context(() => (open = false));
 </script>
 
-<slot name="button" {toggle} {isOpen} />
+<slot name="button" {toggle} {open} />
 
-{#if isOpen}
+{#if open}
 	<slot />
 {/if}

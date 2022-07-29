@@ -1,11 +1,9 @@
 <script lang="ts">
+	import CardList from '$site/components/CardList.svelte';
+
 	export let components: Site.Component[] = [];
 </script>
 
-<ul>
-	{#each components as { name, url }}
-		<li>
-			<a href={url}>{name}</a>
-		</li>
-	{/each}
-</ul>
+<CardList items={components} let:item>
+	{item.name}
+</CardList>

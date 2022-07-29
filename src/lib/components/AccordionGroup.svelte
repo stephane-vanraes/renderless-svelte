@@ -9,6 +9,7 @@
 		$current && $current !== fn && $current();
 		current.set(fn);
 	};
+
 	setContext(contextName, context);
 </script>
 

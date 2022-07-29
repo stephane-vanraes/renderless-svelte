@@ -11,7 +11,10 @@ declare namespace App {
 }
 
 declare namespace Site {
-	interface Component {
+	interface Item {
+		url: string
+	}
+	interface Component extends Item {
 		name: string;
 		url: string;
 	}
