@@ -1,3 +1,7 @@
+**Important Note**
+
+Due to changes in priorities, I will no longer be maintaining this library.  Feel free to fork it.
+
 # Renderless Svelte Components
 
 ## What are renderless components ?
